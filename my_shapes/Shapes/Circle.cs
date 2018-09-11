@@ -2,7 +2,7 @@
 
 namespace Shapes
 {
-    public class Circle
+    public class Circle : ComplexShape
     {
         public Point Center { get; private set; }
         public double Radius { get; private set;  }
@@ -45,7 +45,7 @@ namespace Shapes
          * @param deltaY            a delta change for the y-location of center of the circle
          * @throws ShapeException   Exception thrown if either the delta x or y are not valid doubles
          */
-        public void Move(double deltaX, double deltaY)
+        public override void Move(double deltaX, double deltaY)
         {
             Center.Move(deltaX, deltaY);
         }
@@ -67,7 +67,7 @@ namespace Shapes
         /**
          * @return  The area of the circle.
          */
-        public double ComputeArea()
+        public override double ComputeArea()
         {
             return Math.PI * Math.Pow(Radius, 2);
         }
