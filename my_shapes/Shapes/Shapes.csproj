@@ -46,11 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ComplexShape.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Circle.cs" />
     <Compile Include="Line.cs" />
     <Compile Include="Point.cs" />
+    <Compile Include="Shape.cs" />
     <Compile Include="ShapeException.cs" />
+    <Compile Include="Triangle.cs" />
     <Compile Include="Validator.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
