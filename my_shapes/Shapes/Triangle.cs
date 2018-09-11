@@ -48,7 +48,7 @@ namespace Shapes
         }
 
         /**
-         * In-clas utility for use by constructors to make sure user input creates a valid triangle
+         * In-class utility for use by constructors to make sure user input creates a valid triangle
          * 
          * @param point1 The first point
          * @param point2 The second point
