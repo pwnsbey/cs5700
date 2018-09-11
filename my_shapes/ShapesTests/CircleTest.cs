@@ -10,12 +10,12 @@ namespace ShapesTests
         [TestMethod]
         public void TestValidConstruction()
         {
-            var circle = new Circle(1, 3, 2.5);
+            var circle = new Ellipse(1, 3, 2.5);
             Assert.AreEqual(1, circle.Center.X);
             Assert.AreEqual(3, circle.Center.Y);
             Assert.AreEqual(2.5, circle.Radius);
 
-            circle = new Circle(new Point(1.23, 4.56), 7.89);
+            circle = new Ellipse(new Point(1.23, 4.56), 7.89);
             Assert.AreEqual(1.23, circle.Center.X);
             Assert.AreEqual(4.56, circle.Center.Y);
             Assert.AreEqual(7.89, circle.Radius);
@@ -26,7 +26,7 @@ namespace ShapesTests
         {
             try
             {
-                new Circle(null, 2.5);
+                new Ellipse(null, 2.5);
                 Assert.Fail("Expected exception not thrown");
             }
             catch (ShapeException e)
@@ -36,7 +36,7 @@ namespace ShapesTests
 
             try
             {
-                new Circle(new Point(1, 2), double.PositiveInfinity);
+                new Ellipse(new Point(1, 2), double.PositiveInfinity);
                 Assert.Fail("Expected exception not thrown");
             }
             catch (ShapeException e)
@@ -46,7 +46,7 @@ namespace ShapesTests
 
             try
             {
-                new Circle(new Point(1, 2), double.NegativeInfinity);
+                new Ellipse(new Point(1, 2), double.NegativeInfinity);
                 Assert.Fail("Expected exception not thrown");
             }
             catch (ShapeException e)
@@ -56,7 +56,7 @@ namespace ShapesTests
 
             try
             {
-                new Circle(new Point(1, 2), Double.NaN);
+                new Ellipse(new Point(1, 2), Double.NaN);
                 Assert.Fail("Expected exception not thrown");
             }
             catch (ShapeException e)
@@ -66,7 +66,7 @@ namespace ShapesTests
 
             try
             {
-                new Circle(double.PositiveInfinity, 2, 3);
+                new Ellipse(double.PositiveInfinity, 2, 3);
                 Assert.Fail("Expected exception not thrown");
             }
             catch (ShapeException e)
@@ -76,7 +76,7 @@ namespace ShapesTests
 
             try
             {
-                new Circle(double.NegativeInfinity, 2, 3);
+                new Ellipse(double.NegativeInfinity, 2, 3);
                 Assert.Fail("Expected exception not thrown");
             }
             catch (ShapeException e)
@@ -86,7 +86,7 @@ namespace ShapesTests
 
             try
             {
-                new Circle(Double.NaN, 2, 3);
+                new Ellipse(Double.NaN, 2, 3);
                 Assert.Fail("Expected exception not thrown");
             }
             catch (ShapeException e)
@@ -96,7 +96,7 @@ namespace ShapesTests
 
             try
             {
-                new Circle(1, double.PositiveInfinity, 3);
+                new Ellipse(1, double.PositiveInfinity, 3);
                 Assert.Fail("Expected exception not thrown");
             }
             catch (ShapeException e)
@@ -106,7 +106,7 @@ namespace ShapesTests
 
             try
             {
-                new Circle(1, double.NegativeInfinity, 3);
+                new Ellipse(1, double.NegativeInfinity, 3);
                 Assert.Fail("Expected exception not thrown");
             }
             catch (ShapeException e)
@@ -116,7 +116,7 @@ namespace ShapesTests
 
             try
             {
-                new Circle(1, double.NaN, 3);
+                new Ellipse(1, double.NaN, 3);
                 Assert.Fail("Expected exception not thrown");
             }
             catch (ShapeException e)
@@ -126,7 +126,7 @@ namespace ShapesTests
 
             try
             {
-                new Circle(1, 2, double.PositiveInfinity);
+                new Ellipse(1, 2, double.PositiveInfinity);
                 Assert.Fail("Expected exception not thrown");
             }
             catch (ShapeException e)
@@ -136,7 +136,7 @@ namespace ShapesTests
 
             try
             {
-                new Circle(1, 2, double.PositiveInfinity);
+                new Ellipse(1, 2, double.PositiveInfinity);
                 Assert.Fail("Expected exception not thrown");
             }
             catch (ShapeException e)
@@ -146,7 +146,7 @@ namespace ShapesTests
 
             try
             {
-                new Circle(1, 2, Double.NaN);
+                new Ellipse(1, 2, Double.NaN);
                 Assert.Fail("Expected exception not thrown");
             }
             catch (ShapeException e)
@@ -157,7 +157,7 @@ namespace ShapesTests
 
         [TestMethod]
         public void TestMove() {
-            Circle myCircle = new Circle(1, 2, 5);
+            Ellipse myCircle = new Ellipse(1, 2, 5);
             Assert.AreEqual(1, myCircle.Center.X, 0);
             Assert.AreEqual(2, myCircle.Center.Y, 0);
             Assert.AreEqual(5, myCircle.Radius, 0);
@@ -245,7 +245,7 @@ namespace ShapesTests
 
         [TestMethod]
         public void TestScale() {
-            Circle myCircle = new Circle(1, 2, 5);
+            Ellipse myCircle = new Ellipse(1, 2, 5);
             Assert.AreEqual(1, myCircle.Center.X, 0);
             Assert.AreEqual(2, myCircle.Center.Y, 0);
             Assert.AreEqual(5, myCircle.Radius, 0);
@@ -294,13 +294,13 @@ namespace ShapesTests
         [TestMethod]
         public void TestComputeArea()
         {
-            Circle myCircle = new Circle(1, 2, 5);
+            Ellipse myCircle = new Ellipse(1, 2, 5);
             Assert.AreEqual(78.53975, myCircle.ComputeArea(), 0.0001);
 
-            myCircle = new Circle(1, 2, 4.234);
+            myCircle = new Ellipse(1, 2, 4.234);
             Assert.AreEqual(56.3185174, myCircle.ComputeArea(), 0.0001);
 
-            myCircle = new Circle(1, 2, 0);
+            myCircle = new Ellipse(1, 2, 0);
             Assert.AreEqual(0, myCircle.ComputeArea(), 0);
 
         }

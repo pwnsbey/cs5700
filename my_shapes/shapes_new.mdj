@@ -871,30 +871,13 @@
 											"height": 13,
 											"text": "-horizRadius: double",
 											"horizontalAlignment": 0
-										},
-										{
-											"_type": "UMLAttributeView",
-											"_id": "AAAAAAFlxmAebqXgrkQ=",
-											"_parent": {
-												"$ref": "AAAAAAFlxk8tvIUIylk="
-											},
-											"model": {
-												"$ref": "AAAAAAFlxmAeRqXanr0="
-											},
-											"font": "Arial;13;0",
-											"left": 1141,
-											"top": 1115,
-											"width": 517.04833984375,
-											"height": 13,
-											"text": "-distToFoci: double",
-											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 1136,
 									"top": 1065,
 									"width": 527.04833984375,
-									"height": 68
+									"height": 53
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -917,7 +900,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 1141,
-											"top": 1138,
+											"top": 1123,
 											"width": 517.04833984375,
 											"height": 13,
 											"text": "+Ellipse(x: double, y: double, vertRadius: double, horizRadius: double, distToFoci: double)",
@@ -934,7 +917,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 1141,
-											"top": 1153,
+											"top": 1138,
 											"width": 517.04833984375,
 											"height": 13,
 											"text": "+Ellipse(center: Point, vertRadius: double, horizRadius: double, distToFoci: double)",
@@ -951,7 +934,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 1141,
-											"top": 1168,
+											"top": 1153,
 											"width": 517.04833984375,
 											"height": 13,
 											"text": "+getCenter(): Point",
@@ -968,7 +951,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 1141,
-											"top": 1183,
+											"top": 1168,
 											"width": 517.04833984375,
 											"height": 13,
 											"text": "+getVertRadius(): double",
@@ -985,7 +968,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 1141,
-											"top": 1198,
+											"top": 1183,
 											"width": 517.04833984375,
 											"height": 13,
 											"text": "+getHorizRadius(): double",
@@ -1002,7 +985,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 1141,
-											"top": 1213,
+											"top": 1198,
 											"width": 517.04833984375,
 											"height": 13,
 											"text": "+move(deltaX: double, deltaY: double)",
@@ -1019,7 +1002,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 1141,
-											"top": 1228,
+											"top": 1213,
 											"width": 517.04833984375,
 											"height": 13,
 											"text": "+scale(scaleFactor: double)",
@@ -1036,52 +1019,18 @@
 											},
 											"font": "Arial;13;0",
 											"left": 1141,
-											"top": 1243,
+											"top": 1228,
 											"width": 517.04833984375,
 											"height": 13,
 											"text": "+computeArea(): double",
-											"horizontalAlignment": 0
-										},
-										{
-											"_type": "UMLOperationView",
-											"_id": "AAAAAAFlxnPD8NpUTyc=",
-											"_parent": {
-												"$ref": "AAAAAAFlxk8tvIUJAt8="
-											},
-											"model": {
-												"$ref": "AAAAAAFlxnPDzNpO6Zo="
-											},
-											"font": "Arial;13;0",
-											"left": 1141,
-											"top": 1258,
-											"width": 517.04833984375,
-											"height": 13,
-											"text": "+getFoci1(): Point",
-											"horizontalAlignment": 0
-										},
-										{
-											"_type": "UMLOperationView",
-											"_id": "AAAAAAFlxnPyUNs1km8=",
-											"_parent": {
-												"$ref": "AAAAAAFlxk8tvIUJAt8="
-											},
-											"model": {
-												"$ref": "AAAAAAFlxnPyGtsvVPc="
-											},
-											"font": "Arial;13;0",
-											"left": 1141,
-											"top": 1273,
-											"width": 517.04833984375,
-											"height": 13,
-											"text": "+getFoci2(): Point",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 1136,
-									"top": 1133,
+									"top": 1118,
 									"width": 527.04833984375,
-									"height": 158
+									"height": 128
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -9404,16 +9353,6 @@
 							"name": "horizRadius",
 							"visibility": "private",
 							"type": "double"
-						},
-						{
-							"_type": "UMLAttribute",
-							"_id": "AAAAAAFlxmAeRqXanr0=",
-							"_parent": {
-								"$ref": "AAAAAAFlxk8tu4UAYJQ="
-							},
-							"name": "distToFoci",
-							"visibility": "private",
-							"type": "double"
 						}
 					],
 					"operations": [
@@ -9641,48 +9580,6 @@
 										"$ref": "AAAAAAFlxlHd34aEtRs="
 									},
 									"type": "double",
-									"direction": "return"
-								}
-							]
-						},
-						{
-							"_type": "UMLOperation",
-							"_id": "AAAAAAFlxnPDzNpO6Zo=",
-							"_parent": {
-								"$ref": "AAAAAAFlxk8tu4UAYJQ="
-							},
-							"name": "getFoci1",
-							"parameters": [
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAFlxnPxo9rcQxc=",
-									"_parent": {
-										"$ref": "AAAAAAFlxnPDzNpO6Zo="
-									},
-									"type": {
-										"$ref": "AAAAAAFlxkuEWYMEEiY="
-									},
-									"direction": "return"
-								}
-							]
-						},
-						{
-							"_type": "UMLOperation",
-							"_id": "AAAAAAFlxnPyGtsvVPc=",
-							"_parent": {
-								"$ref": "AAAAAAFlxk8tu4UAYJQ="
-							},
-							"name": "getFoci2",
-							"parameters": [
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAFlxnQIHdu9sZQ=",
-									"_parent": {
-										"$ref": "AAAAAAFlxnPyGtsvVPc="
-									},
-									"type": {
-										"$ref": "AAAAAAFlxkuEWYMEEiY="
-									},
 									"direction": "return"
 								}
 							]
@@ -10778,7 +10675,8 @@
 								"$ref": "AAAAAAFlxnfzmegR5mE="
 							},
 							"name": "rectangle",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						}
 					],
 					"operations": [
