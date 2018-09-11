@@ -2,7 +2,7 @@
 
 namespace Shapes
 {
-    public class Line
+    public class Line : Shape
     {
         public Point Point1 { get; private set; }
         public Point Point2 { get; private set; }
@@ -43,7 +43,7 @@ namespace Shapes
          * @param deltaY            The delta y-location by which the line should be moved -- must be a valid double
          * @throws ShapeException   Exception throw if any parameter is invalid
          */
-        public void Move(double deltaX, double deltaY)
+        public override void Move(double deltaX, double deltaY)
         {
             Point1.Move(deltaX, deltaY);
             Point2.Move(deltaX, deltaY);

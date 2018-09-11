@@ -1,6 +1,6 @@
 ﻿namespace Shapes
 {
-    public class Point
+    public class Point : Shape
     {
         public double X { get; private set; }
         public double Y { get; private set; }
@@ -43,7 +43,7 @@
          * @param deltaY            The delta amount to move the point in the y direction -- must be a valid double
          * @throws ShapeException   Exception throw if any parameter is invalid
          */ 
-        public void Move(double deltaX, double deltaY)
+        public override void Move(double deltaX, double deltaY)
         {
             MoveX(deltaX);
             MoveY(deltaY);
@@ -58,6 +58,5 @@
         {
             return new Point(X, Y);
         }
-
-}
+    }
 }
