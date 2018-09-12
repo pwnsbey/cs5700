@@ -13,12 +13,12 @@ namespace ShapesTests
             var circle = new Circle (1, 3, 2.5);
             Assert.AreEqual(1, circle.GetCenter().X);
             Assert.AreEqual(3, circle.GetCenter().Y);
-            Assert.AreEqual(2.5, circle.GetCenter());
+            Assert.AreEqual(2.5, circle.GetRadius());
 
             circle = new Circle(new Point(1.23, 4.56), 7.89);
             Assert.AreEqual(1.23, circle.GetCenter().X);
             Assert.AreEqual(4.56, circle.GetCenter().Y);
-            Assert.AreEqual(7.89, circle.GetCenter());
+            Assert.AreEqual(7.89, circle.GetRadius());
         }
 
         [TestMethod]
