@@ -40,6 +40,9 @@ namespace Shapes
          */
         public Triangle(Point point1, Point point2, Point point3)
         {
+            if (point1 == null || point2 == null || point3 == null)
+                throw new ShapeException("Invalid corner point(s)");
+
             ValidateTriangle(point1, point2, point3);
 
             Point1 = point1;
@@ -61,13 +64,6 @@ namespace Shapes
 
             if ((point1.X == point2.X && point2.X == point3.X) || (point1.Y == point2.Y && point2.Y == point3.Y))
                 throw new ShapeException("All points may not be in a line");
-
-            double sideALen = new Line(point1, point2).ComputeLength();
-            double sideBLen = new Line(point2, point3).ComputeLength();
-            double sideCLen = new Line(point3, point1).ComputeLength();
-
-            if (sideALen > sideBLen + sideCLen || sideBLen > sideALen + sideCLen || sideCLen > sideALen + sideBLen)
-                throw new ShapeException("One side's length may not be greater than the sum of the other two");
         }
 
         /**

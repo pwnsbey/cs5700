@@ -14,6 +14,11 @@ namespace ShapesTests
             Assert.AreEqual(1, square.GetPoint1().X);
             Assert.AreEqual(2, square.GetPoint2().Y);
             Assert.AreEqual(3, square.GetSide());
+
+            square = new Square(new Point(1, 2), 3);
+            Assert.AreEqual(1, square.GetPoint1().X);
+            Assert.AreEqual(2, square.GetPoint2().Y);
+            Assert.AreEqual(3, square.GetSide());
         }
 
         [TestMethod]
