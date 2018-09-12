@@ -15,7 +15,7 @@ namespace Shapes
          */
         public Square(double cornerX, double cornerY, double sideLength)
         {
-            Validator.ValidatePositiveDouble(sideLength, "Side of square must be greater than zero");
+            Validator.ValidatePositiveDouble(sideLength, "Invalid side legnth");
             Rectangle = new Rectangle(cornerX, cornerY, cornerX + sideLength, cornerY + sideLength);
         }
 
@@ -27,7 +27,9 @@ namespace Shapes
          */
         public Square (Point point, double sideLength)
         {
-            Validator.ValidatePositiveDouble(sideLength, "Side of square must be greater than zero");
+            Validator.ValidatePositiveDouble(sideLength, "Invalid side legnth");
+            if (point == null)
+                throw new ShapeException("Invalid corner point");
 
             Point point2 = new Point(point.X + sideLength, point.Y + sideLength);
             Rectangle = new Rectangle(point, point2);
