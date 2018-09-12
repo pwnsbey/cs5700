@@ -53,7 +53,7 @@ namespace ShapesTests
             }
             catch (ShapeException e)
             {
-                Assert.AreEqual("Invalid corner point(s)", e.Message);
+                Assert.AreEqual("Invalid x-location point", e.Message);
             }
 
             try
@@ -63,7 +63,7 @@ namespace ShapesTests
             }
             catch (ShapeException e)
             {
-                Assert.AreEqual("Invalid corner point(s)", e.Message);
+                Assert.AreEqual("Invalid y-location point", e.Message);
             }
 
             try
@@ -73,7 +73,7 @@ namespace ShapesTests
             }
             catch (ShapeException e)
             {
-                Assert.AreEqual("Invalid corner point(s)", e.Message);
+                Assert.AreEqual("Invalid x-location point", e.Message);
             }
 
             try
@@ -83,7 +83,7 @@ namespace ShapesTests
             }
             catch (ShapeException e)
             {
-                Assert.AreEqual("Invalid corner point(s)", e.Message);
+                Assert.AreEqual("Invalid y-location point", e.Message);
             }
 
             try
@@ -93,7 +93,7 @@ namespace ShapesTests
             }
             catch (ShapeException e)
             {
-                Assert.AreEqual("Invalid corner point(s)", e.Message);
+                Assert.AreEqual("Invalid x-location point", e.Message);
             }
 
             try
@@ -103,7 +103,7 @@ namespace ShapesTests
             }
             catch (ShapeException e)
             {
-                Assert.AreEqual("Invalid corner point(s)", e.Message);
+                Assert.AreEqual("Invalid y-location point", e.Message);
             }
 
             try
@@ -113,7 +113,7 @@ namespace ShapesTests
             }
             catch (ShapeException e)
             {
-                Assert.AreEqual("Invalid corner point(s)", e.Message);
+                Assert.AreEqual("Invalid x-location point", e.Message);
             }
 
             try
@@ -123,7 +123,7 @@ namespace ShapesTests
             }
             catch (ShapeException e)
             {
-                Assert.AreEqual("Invalid corner point(s)", e.Message);
+                Assert.AreEqual("Invalid y-location point", e.Message);
             }
 
             try
@@ -133,7 +133,7 @@ namespace ShapesTests
             }
             catch (ShapeException e)
             {
-                Assert.AreEqual("Invalid corner point(s)", e.Message);
+                Assert.AreEqual("Invalid x-location point", e.Message);
             }
 
             try
@@ -143,7 +143,7 @@ namespace ShapesTests
             }
             catch (ShapeException e)
             {
-                Assert.AreEqual("Invalid corner point(s)", e.Message);
+                Assert.AreEqual("Invalid y-location point", e.Message);
             }
 
             try
@@ -153,7 +153,7 @@ namespace ShapesTests
             }
             catch (ShapeException e)
             {
-                Assert.AreEqual("Invalid corner point(s)", e.Message);
+                Assert.AreEqual("Invalid x-location point", e.Message);
             }
 
             try
@@ -163,7 +163,7 @@ namespace ShapesTests
             }
             catch (ShapeException e)
             {
-                Assert.AreEqual("Invalid corner point(s)", e.Message);
+                Assert.AreEqual("Invalid y-location point", e.Message);
             }
 
             try

@@ -19,8 +19,8 @@ namespace Shapes
          */
         public Ellipse(double x, double y, double vertRadius, double horizRadius)
         {
-            Validator.ValidatePositiveDouble(vertRadius, "Invalid vertical radius");
-            Validator.ValidatePositiveDouble(horizRadius, "Invalid horizontal radius");
+            Validator.ValidatePositiveDouble(vertRadius, "Invalid radius");
+            Validator.ValidatePositiveDouble(horizRadius, "Invalid radius");
 
             Center = new Point(x, y);
             VertRadius = vertRadius;
@@ -37,8 +37,8 @@ namespace Shapes
          */
         public Ellipse(Point center, double vertRadius, double horizRadius) {
 
-            Validator.ValidatePositiveDouble(vertRadius, "Invalid vertical radius");
-            Validator.ValidatePositiveDouble(horizRadius, "Invalid horizontal radius");
+            Validator.ValidatePositiveDouble(vertRadius, "Invalid radius");
+            Validator.ValidatePositiveDouble(horizRadius, "Invalid radius");
             if (center == null)
                 throw new ShapeException("Invalid center point");
 

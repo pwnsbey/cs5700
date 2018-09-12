@@ -58,5 +58,14 @@
         {
             return new Point(X, Y);
         }
+
+        /**
+         * @param otherPoint other point to compare this point to
+         * @return whether or not the other point is equal to this one
+         */
+        public bool EqualToPoint(Point otherPoint)
+        {
+            return (X == otherPoint.X && Y == otherPoint.Y);
+        }
     }
 }

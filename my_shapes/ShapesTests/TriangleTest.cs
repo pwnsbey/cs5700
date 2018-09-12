@@ -98,7 +98,7 @@ namespace ShapesTests
         public void TestComputeArea()
         {
             Triangle triangle = new Triangle(0, 0, 0, 2, 2, 0);
-            Assert.AreEqual(2, triangle.ComputeArea(), 0);
+            Assert.AreEqual(2, triangle.ComputeArea(), .0001);
         }
     }
 }

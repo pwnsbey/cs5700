@@ -133,7 +133,7 @@ namespace ShapesTests
             }
             catch (ShapeException e)
             {
-                Assert.AreEqual("Invalid vertical radius", e.Message);
+                Assert.AreEqual("Invalid radius", e.Message);
             }
 
             try
@@ -143,7 +143,7 @@ namespace ShapesTests
             }
             catch (ShapeException e)
             {
-                Assert.AreEqual("Invalid vertical radius", e.Message);
+                Assert.AreEqual("Invalid radius", e.Message);
             }
 
             try
@@ -153,7 +153,7 @@ namespace ShapesTests
             }
             catch (ShapeException e)
             {
-                Assert.AreEqual("Invalid vertical radius", e.Message);
+                Assert.AreEqual("Invalid radius", e.Message);
             }
 
             try
@@ -163,7 +163,7 @@ namespace ShapesTests
             }
             catch (ShapeException e)
             {
-                Assert.AreEqual("Invalid horizontal radius", e.Message);
+                Assert.AreEqual("Invalid radius", e.Message);
             }
 
             try
@@ -173,7 +173,7 @@ namespace ShapesTests
             }
             catch (ShapeException e)
             {
-                Assert.AreEqual("Invalid horizontal radius", e.Message);
+                Assert.AreEqual("Invalid radius", e.Message);
             }
 
             try
@@ -183,7 +183,7 @@ namespace ShapesTests
             }
             catch (ShapeException e)
             {
-                Assert.AreEqual("Invalid horizontal radius", e.Message);
+                Assert.AreEqual("Invalid radius", e.Message);
             }
         }
 

@@ -59,7 +59,7 @@ namespace Shapes
          */
         private void ValidateTriangle(Point point1, Point point2, Point point3)
         {
-            if (point1 == point2 || point1 == point3 || point2 == point3)
+            if (point1.EqualToPoint(point2) || point1.EqualToPoint(point3) || point2.EqualToPoint(point3))
                 throw new ShapeException("Cannot have zero-length sides");
 
             if ((point1.X == point2.X && point2.X == point3.X) || (point1.Y == point2.Y && point2.Y == point3.Y))
