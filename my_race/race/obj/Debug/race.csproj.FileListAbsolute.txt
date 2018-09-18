@@ -1,0 +1,7 @@
+C:\Users\pwnsbey\Desktop\Schoolwork\cs5700\my_race\race\obj\Debug\race.csprojAssemblyReference.cache
+C:\Users\pwnsbey\Desktop\Schoolwork\cs5700\my_race\race\obj\Debug\race.csproj.CoreCompileInputs.cache
+C:\Users\pwnsbey\Desktop\Schoolwork\cs5700\my_race\race\bin\Debug\race.exe.config
+C:\Users\pwnsbey\Desktop\Schoolwork\cs5700\my_race\race\bin\Debug\race.exe
+C:\Users\pwnsbey\Desktop\Schoolwork\cs5700\my_race\race\bin\Debug\race.pdb
+C:\Users\pwnsbey\Desktop\Schoolwork\cs5700\my_race\race\obj\Debug\race.exe
+C:\Users\pwnsbey\Desktop\Schoolwork\cs5700\my_race\race\obj\Debug\race.pdb

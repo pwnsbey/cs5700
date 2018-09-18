@@ -3,9 +3,8 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
-using log4net;
 
-namespace Base
+namespace race
 {
     public class Communicator
     {
