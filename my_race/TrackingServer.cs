@@ -19,43 +19,52 @@ namespace race
 
         private void HandleRaceMessage(string raceName, string raceLength)
         {
-            return;
+            RaceName = raceName;
+            RaceLength = raceLength;
         }
 
         private void HandleRegisteredMessage(int bibNumber, double time, string firstName, 
                                              string lastName, char gender, int age)
         {
-            return;
+            Athlete athlete = new Athlete(bibNumber, firstName, lastName, gender, age, time, 0, 0);
+            Athletes.Add(athlete);
+            SendAthleteMessage(athlete);
         }
 
         private void HandleDidNotStartMessage(int bibNumber, double time)
         {
-            return;
+            Athletes.Find(athlete => athlete.BibNumber == bibNumber).Status.CurrStatus = 1;
+            SendStatus(bibNumber);
         }
 
         private void HandleStartedMessage(int bibNumber, double time)
         {
-            return;
+            Athletes.Find(athlete => athlete.BibNumber == bibNumber).Status.CurrStatus = 2;
+            SendStatus(bibNumber);
         }
 
         private void HandleOnCourseMessage(int bibNumber, double time, double distance)
         {
-            return;
+            Athletes.Find(athlete => athlete.BibNumber == bibNumber).Status.CurrStatus = 3;
+            SendStatus(bibNumber);
         }
 
         private void HandleDidNotFinishMessage(int bibNumber, double time)
         {
-            return;
+            Athletes.Find(athlete => athlete.BibNumber == bibNumber).Status.CurrStatus = 4;
+            SendStatus(bibNumber);
         }
 
         private void HandleFinishedMessage(int bibNumber, double time)
         {
-            return;
+            Athletes.Find(athlete => athlete.BibNumber == bibNumber).Status.CurrStatus = 5;
+            SendStatus(bibNumber);
         }
 
         private void HandleHelloMessage(IPEndPoint clientEndPoint)
         {
-            return;
+            // add client to list
+            // sent all previously registered athletes to client (foreach -> SendAthleteMessage)
         }
 
         private void HandleSubscribeMessage(int bibNumber, IPEndPoint clientEndPoint)
@@ -68,18 +77,19 @@ namespace race
             return;
         }
 
-        private void SendRaceStartedMessage()
+        private void SendRaceMessage()
         {
             return;
         }
 
-        private void SendNewAthleteMessage()
+        private void SendAthleteMessage(Athlete newAthlete)
         {
             return;
         }
 
-        private void SendAthleteStatus()
+        private void SendStatus(int athleteBib)
         {
+            // search client list and send messages updating each of them (find, foreach)
             return;
         }
 

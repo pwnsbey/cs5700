@@ -8,9 +8,9 @@ namespace race
 {
     public struct Status
     {
-        double Time;
-        double Distance;
-        int CurrStatus;
+        public double Time;
+        public double Distance;
+        public int CurrStatus;
     }
 
     public class Athlete
@@ -21,5 +21,16 @@ namespace race
         public char Gender;
         public int Age;
         public Status Status;
+
+        public Athlete(int bibNumber, string firstName, string lastName, char gender, int age,
+                       double time, double distance, int currStatus)
+        {
+            BibNumber = bibNumber;
+            FirstName = firstName;
+            LastName = lastName;
+            Gender = gender;
+            Age = age;
+            Status = new Status() { Time = time, Distance = distance, CurrStatus = currStatus };
+        }
     }
 }
