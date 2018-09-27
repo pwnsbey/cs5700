@@ -18,6 +18,11 @@ namespace race
         private string RaceLength;
 
         private Dictionary<int, string> STATUS_LOOKUP = new Dictionary<int, string>();
+        
+        public TrackingServer(IPEndPoint tsEndPoint)
+        {
+            serverEndPoint = tsEndPoint;
+        }
 
         private void HandleRaceMessage(string raceName, string raceLength)
         {
@@ -180,8 +185,7 @@ namespace race
             STATUS_LOOKUP.Add(3, "OnCourse");
             STATUS_LOOKUP.Add(4, "DidNotFinish");
             STATUS_LOOKUP.Add(5, "Finished");
-
-            serverEndPoint = new IPEndPoint(IPAddress.Any, 0);
+            
             Athletes = new List<Athlete>();
             Clients = new List<Client>();
             CommsBoi = new Communicator(Port);
