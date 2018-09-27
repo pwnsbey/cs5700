@@ -8,7 +8,8 @@ namespace race
 {
     public struct Status
     {
-        public double Time;
+        public double StartTime;
+        public double LastUpdateTime;
         public double Distance;
         public int CurrStatus;
     }
@@ -30,7 +31,7 @@ namespace race
             LastName = lastName;
             Gender = gender;
             Age = age;
-            Status = new Status() { Time = time, Distance = distance, CurrStatus = currStatus };
+            Status = new Status() { StartTime = 0, LastUpdateTime = time, Distance = distance, CurrStatus = currStatus };
         }
     }
 }

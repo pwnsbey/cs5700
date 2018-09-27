@@ -10,7 +10,12 @@ namespace race
     public class Client
     {
         public List<int> SubbedAthletes;
-        public int Id;
         public IPEndPoint EndPoint;
+
+        public Client(IPEndPoint endPoint)
+        {
+            EndPoint = endPoint;
+            SubbedAthletes = new List<int>();
+        }
     }
 }

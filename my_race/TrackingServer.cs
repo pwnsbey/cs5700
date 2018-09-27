@@ -17,6 +17,8 @@ namespace race
         private string RaceName;
         private string RaceLength;
 
+        private Dictionary<int, string> STATUS_LOOKUP = new Dictionary<int, string>();
+
         private void HandleRaceMessage(string raceName, string raceLength)
         {
             RaceName = raceName;
@@ -28,80 +30,111 @@ namespace race
         {
             Athlete athlete = new Athlete(bibNumber, firstName, lastName, gender, age, time, 0, 0);
             Athletes.Add(athlete);
-            SendAthleteMessage(athlete);
+            foreach (Client c in Clients)
+                SendAthleteMessage(athlete, c.EndPoint);
         }
 
         private void HandleDidNotStartMessage(int bibNumber, double time)
         {
-            Athletes.Find(athlete => athlete.BibNumber == bibNumber).Status.CurrStatus = 1;
-            SendStatus(bibNumber);
+            Athlete a = Athletes.Find(athlete => athlete.BibNumber == bibNumber);
+            a.Status.CurrStatus = 1;
+            a.Status.LastUpdateTime = time;
+            SendStatus(a);
         }
 
         private void HandleStartedMessage(int bibNumber, double time)
         {
-            Athletes.Find(athlete => athlete.BibNumber == bibNumber).Status.CurrStatus = 2;
-            SendStatus(bibNumber);
+            Athlete a = Athletes.Find(athlete => athlete.BibNumber == bibNumber);
+            a.Status.CurrStatus = 2;
+            a.Status.StartTime = time;
+            a.Status.LastUpdateTime = time;
+            SendStatus(a);
         }
 
         private void HandleOnCourseMessage(int bibNumber, double time, double distance)
         {
-            Athletes.Find(athlete => athlete.BibNumber == bibNumber).Status.CurrStatus = 3;
-            SendStatus(bibNumber);
+            Athlete a = Athletes.Find(athlete => athlete.BibNumber == bibNumber);
+            a.Status.CurrStatus = 3;
+            a.Status.LastUpdateTime = time;
+            a.Status.Distance = distance;
+            SendStatus(a);
         }
 
         private void HandleDidNotFinishMessage(int bibNumber, double time)
         {
-            Athletes.Find(athlete => athlete.BibNumber == bibNumber).Status.CurrStatus = 4;
-            SendStatus(bibNumber);
+            Athlete a = Athletes.Find(athlete => athlete.BibNumber == bibNumber);
+            a.Status.CurrStatus = 4;
+            a.Status.LastUpdateTime = time;
+            SendStatus(a);
         }
 
         private void HandleFinishedMessage(int bibNumber, double time)
         {
-            Athletes.Find(athlete => athlete.BibNumber == bibNumber).Status.CurrStatus = 5;
-            SendStatus(bibNumber);
+            Athlete a = Athletes.Find(athlete => athlete.BibNumber == bibNumber);
+            a.Status.CurrStatus = 5;
+            a.Status.LastUpdateTime = time;
+            SendStatus(a);
         }
 
         private void HandleHelloMessage(IPEndPoint clientEndPoint)
         {
-            // add client to list
-            // sent all previously registered athletes to client (foreach -> SendAthleteMessage)
+            Clients.Add(new Client(clientEndPoint));
+            SendRaceMessage(clientEndPoint);
+            foreach (Athlete a in Athletes)
+                SendAthleteMessage(a, clientEndPoint);
         }
 
         private void HandleSubscribeMessage(int bibNumber, IPEndPoint clientEndPoint)
         {
-            return;
+            Client c = Clients.Find(client => client.EndPoint.Equals(clientEndPoint));
+            c.SubbedAthletes.Add(bibNumber);
         }
 
         private void HandleUnsubscribeMessage(int bibNumber, IPEndPoint clientEndPoint)
         {
-            return;
+            Clients.Find(client => client.EndPoint.Equals(clientEndPoint)).SubbedAthletes.Remove(bibNumber);
         }
 
-        private void SendRaceMessage()
+        private void SendRaceMessage(IPEndPoint clientEndPoint)
         {
-            return;
+            CommsBoi.Send("Race," + RaceName + "," + RaceLength, clientEndPoint);
         }
 
-        private void SendAthleteMessage(Athlete newAthlete)
+        private void SendAthleteMessage(Athlete newAthlete, IPEndPoint clientEndPoint)
         {
-            return;
+            CommsBoi.Send("Athlete," + newAthlete.BibNumber + "," + newAthlete.FirstName + "," + 
+                          newAthlete.LastName + "," + newAthlete.Gender + "," + newAthlete.Age, clientEndPoint);
         }
 
-        private void SendStatus(int athleteBib)
+        private void SendStatus(Athlete a)
         {
-            // search client list and send messages updating each of them (find, foreach)
-            return;
+            List<IPEndPoint> targetClients = new List<IPEndPoint>();
+            foreach (Client c in Clients)
+            {
+                if (c.SubbedAthletes != null)
+                {
+                    foreach (int b in c.SubbedAthletes)
+                    {
+                        if (b == a.BibNumber)
+                            targetClients.Add(c.EndPoint);
+                    }
+                }
+            }
+
+            foreach (IPEndPoint c in targetClients)
+                CommsBoi.Send("Status," + a.BibNumber + "," + STATUS_LOOKUP[a.Status.CurrStatus] + "," + a.Status.StartTime + 
+                              "," + a.Status.Distance + "," + a.Status.LastUpdateTime + "," + a.Status.LastUpdateTime, c);
         }
 
         private void HandleMessage(string message, IPEndPoint endPoint)
         {
-            Console.WriteLine(message);
+            Console.WriteLine("<<< " + message + " :: " + endPoint.ToString());
 
             if (message == "Hello")
             {
-                return;
+                HandleHelloMessage(endPoint);
             }
-            string[] msgComps = message.Split(',');  //messageComponents
+            string[] msgComps = message.Split(',');  // messageComponents
             switch (msgComps[0])
             {
                 case "Race":
@@ -141,8 +174,18 @@ namespace race
 
         public void MainLoop()
         {
+            STATUS_LOOKUP.Add(0, "Registered");
+            STATUS_LOOKUP.Add(1, "DidNotStart");
+            STATUS_LOOKUP.Add(2, "Started");
+            STATUS_LOOKUP.Add(3, "OnCourse");
+            STATUS_LOOKUP.Add(4, "DidNotFinish");
+            STATUS_LOOKUP.Add(5, "Finished");
+
             serverEndPoint = new IPEndPoint(IPAddress.Any, 0);
+            Athletes = new List<Athlete>();
+            Clients = new List<Client>();
             CommsBoi = new Communicator(Port);
+            
 
             while (true)
             {

@@ -48,6 +48,7 @@ namespace race
         /// <param name="targetEndPoint">End point where the messasge needs to be sent</param>
         public void Send(string message, IPEndPoint targetEndPoint)
         {
+            Console.WriteLine(">>> " + message + " :: " + targetEndPoint.ToString());
             if (string.IsNullOrEmpty(message))
                 throw new ApplicationException("Cannot send an empty messasge");
 
