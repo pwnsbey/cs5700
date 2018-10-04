@@ -1,27 +1,230 @@
-2018-09-22 19:50:02,340 [1] DEBUG Base.Communicator - Setup UDP Client
-2018-09-22 19:50:02,346 [1] DEBUG Base.Communicator - Local Port 53576
-2018-09-22 19:50:02,346 [3] DEBUG Base.Communicator - Communicator Started
-2018-09-22 19:50:02,372 [1] DEBUG Base.Communicator - Send Hello to 127.0.0.1:12000
-2018-09-22 19:50:02,373 [3] DEBUG Base.Communicator - Got a Race,Bension Loop,16090 from 127.0.0.1:12000
-2018-09-22 19:50:02,373 [3] DEBUG Client.MainForm - Process messageText=Race,Bension Loop,16090
-2018-09-22 19:50:02,376 [3] DEBUG Client.Processor.RaceStartedProcessor - Started Race Bension Loop, 16090 meters
-2018-09-22 19:50:02,376 [3] DEBUG Base.Communicator - Got a Athlete,1,Valentine,Zamora,M,30 from 127.0.0.1:12000
-2018-09-22 19:50:02,376 [3] DEBUG Client.MainForm - Process messageText=Athlete,1,Valentine,Zamora,M,30
-2018-09-22 19:50:02,378 [3] DEBUG Base.Communicator - Got a Athlete,2,Deloras,Toole,F,19 from 127.0.0.1:12000
-2018-09-22 19:50:02,378 [3] DEBUG Client.MainForm - Process messageText=Athlete,2,Deloras,Toole,F,19
-2018-09-22 19:50:02,378 [3] DEBUG Base.Communicator - Got a Athlete,3,Chung,Holdaway,M,36 from 127.0.0.1:12000
-2018-09-22 19:50:02,378 [3] DEBUG Client.MainForm - Process messageText=Athlete,3,Chung,Holdaway,M,36
-2018-09-22 19:50:02,378 [3] DEBUG Base.Communicator - Got a Athlete,4,Dallas,Buskey,M,22 from 127.0.0.1:12000
-2018-09-22 19:50:02,378 [3] DEBUG Client.MainForm - Process messageText=Athlete,4,Dallas,Buskey,M,22
-2018-09-22 19:50:02,382 [3] DEBUG Base.Communicator - Got a Athlete,5,Major,Boots,M,35 from 127.0.0.1:12000
-2018-09-22 19:50:02,382 [3] DEBUG Client.MainForm - Process messageText=Athlete,5,Major,Boots,M,35
-2018-09-22 19:50:02,385 [3] DEBUG Base.Communicator - Got a Athlete,6,Adrian,Logan,M,30 from 127.0.0.1:12000
-2018-09-22 19:50:02,386 [3] DEBUG Client.MainForm - Process messageText=Athlete,6,Adrian,Logan,M,30
-2018-09-22 19:50:02,388 [3] DEBUG Base.Communicator - Got a Athlete,7,Justina,Lapoint,F,50 from 127.0.0.1:12000
-2018-09-22 19:50:02,388 [3] DEBUG Client.MainForm - Process messageText=Athlete,7,Justina,Lapoint,F,50
-2018-09-22 19:50:02,391 [3] DEBUG Base.Communicator - Got a Athlete,8,Eugenio,Fant,M,36 from 127.0.0.1:12000
-2018-09-22 19:50:02,391 [3] DEBUG Client.MainForm - Process messageText=Athlete,8,Eugenio,Fant,M,36
-2018-09-22 19:50:02,392 [3] DEBUG Base.Communicator - Got a Athlete,9,Evalyn,Zepp,F,49 from 127.0.0.1:12000
-2018-09-22 19:50:02,392 [3] DEBUG Client.MainForm - Process messageText=Athlete,9,Evalyn,Zepp,F,49
-2018-09-22 19:50:02,394 [3] DEBUG Base.Communicator - Got a Athlete,10,Richelle,Joslyn,F,38 from 127.0.0.1:12000
-2018-09-22 19:50:02,394 [3] DEBUG Client.MainForm - Process messageText=Athlete,10,Richelle,Joslyn,F,38
+2018-09-28 17:32:43,724 [1] DEBUG Base.Communicator - Setup UDP Client
+2018-09-28 17:32:43,734 [1] DEBUG Base.Communicator - Local Port 65020
+2018-09-28 17:32:43,735 [3] DEBUG Base.Communicator - Communicator Started
+2018-09-28 17:32:43,769 [1] DEBUG Base.Communicator - Send Hello to 127.0.0.1:12000
+2018-09-28 17:32:43,770 [3] DEBUG Base.Communicator - Got a Race,Bension Loop,16090 from 127.0.0.1:12000
+2018-09-28 17:32:43,772 [3] DEBUG Client.MainForm - Process messageText=Race,Bension Loop,16090
+2018-09-28 17:32:43,774 [3] DEBUG Client.Processor.RaceStartedProcessor - Started Race Bension Loop, 16090 meters
+2018-09-28 17:32:43,775 [3] DEBUG Base.Communicator - Got a Athlete,1,Valentine,Zamora,M,30 from 127.0.0.1:12000
+2018-09-28 17:32:43,775 [3] DEBUG Client.MainForm - Process messageText=Athlete,1,Valentine,Zamora,M,30
+2018-09-28 17:32:43,778 [3] DEBUG Base.Communicator - Got a Athlete,2,Deloras,Toole,F,19 from 127.0.0.1:12000
+2018-09-28 17:32:43,778 [3] DEBUG Client.MainForm - Process messageText=Athlete,2,Deloras,Toole,F,19
+2018-09-28 17:32:43,778 [3] DEBUG Base.Communicator - Got a Athlete,3,Chung,Holdaway,M,36 from 127.0.0.1:12000
+2018-09-28 17:32:43,778 [3] DEBUG Client.MainForm - Process messageText=Athlete,3,Chung,Holdaway,M,36
+2018-09-28 17:32:43,778 [3] DEBUG Base.Communicator - Got a Athlete,4,Dallas,Buskey,M,22 from 127.0.0.1:12000
+2018-09-28 17:32:43,778 [3] DEBUG Client.MainForm - Process messageText=Athlete,4,Dallas,Buskey,M,22
+2018-09-28 17:32:43,778 [3] DEBUG Base.Communicator - Got a Athlete,5,Major,Boots,M,35 from 127.0.0.1:12000
+2018-09-28 17:32:43,778 [3] DEBUG Client.MainForm - Process messageText=Athlete,5,Major,Boots,M,35
+2018-09-28 17:32:43,778 [3] DEBUG Base.Communicator - Got a Athlete,6,Adrian,Logan,M,30 from 127.0.0.1:12000
+2018-09-28 17:32:43,778 [3] DEBUG Client.MainForm - Process messageText=Athlete,6,Adrian,Logan,M,30
+2018-09-28 17:32:43,778 [3] DEBUG Base.Communicator - Got a Athlete,7,Justina,Lapoint,F,50 from 127.0.0.1:12000
+2018-09-28 17:32:43,778 [3] DEBUG Client.MainForm - Process messageText=Athlete,7,Justina,Lapoint,F,50
+2018-09-28 17:32:43,778 [3] DEBUG Base.Communicator - Got a Athlete,8,Eugenio,Fant,M,36 from 127.0.0.1:12000
+2018-09-28 17:32:43,778 [3] DEBUG Client.MainForm - Process messageText=Athlete,8,Eugenio,Fant,M,36
+2018-09-28 17:32:43,778 [3] DEBUG Base.Communicator - Got a Athlete,9,Evalyn,Zepp,F,49 from 127.0.0.1:12000
+2018-09-28 17:32:43,778 [3] DEBUG Client.MainForm - Process messageText=Athlete,9,Evalyn,Zepp,F,49
+2018-09-28 17:32:43,778 [3] DEBUG Base.Communicator - Got a Athlete,10,Richelle,Joslyn,F,38 from 127.0.0.1:12000
+2018-09-28 17:32:43,778 [3] DEBUG Client.MainForm - Process messageText=Athlete,10,Richelle,Joslyn,F,38
+2018-09-28 17:32:48,078 [1] DEBUG Base.Communicator - Send Subscribe,3 to 127.0.0.1:12000
+2018-09-28 17:32:49,669 [1] DEBUG Base.Communicator - Send Subscribe,8 to 127.0.0.1:12000
+2018-09-28 17:32:50,079 [3] DEBUG Base.Communicator - Got a Status,3,Started,210,0,210,210 from 127.0.0.1:12000
+2018-09-28 17:32:50,079 [3] DEBUG Client.MainForm - Process messageText=Status,3,Started,210,0,210,210
+2018-09-28 17:32:50,082 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 3,Chung,Holdaway,M,36,Started,210,0,210,210
+2018-09-28 17:32:51,089 [3] DEBUG Base.Communicator - Got a Status,3,OnCourse,210,248.40822382619,240,240 from 127.0.0.1:12000
+2018-09-28 17:32:51,089 [3] DEBUG Client.MainForm - Process messageText=Status,3,OnCourse,210,248.40822382619,240,240
+2018-09-28 17:32:51,089 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 3,Chung,Holdaway,M,36,OnCourse,210,248.40822382619,240,240
+2018-09-28 17:32:51,336 [1] DEBUG Base.Communicator - Send Subscribe,4 to 127.0.0.1:12000
+2018-09-28 17:32:52,089 [3] DEBUG Base.Communicator - Got a Status,3,OnCourse,210,499.779461993274,270,270 from 127.0.0.1:12000
+2018-09-28 17:32:52,089 [3] DEBUG Client.MainForm - Process messageText=Status,3,OnCourse,210,499.779461993274,270,270
+2018-09-28 17:32:52,089 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 3,Chung,Holdaway,M,36,OnCourse,210,499.779461993274,270,270
+2018-09-28 17:32:52,090 [3] DEBUG Base.Communicator - Got a Status,4,OnCourse,240,282.49872851594,270,270 from 127.0.0.1:12000
+2018-09-28 17:32:52,090 [3] DEBUG Client.MainForm - Process messageText=Status,4,OnCourse,240,282.49872851594,270,270
+2018-09-28 17:32:52,090 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 4,Dallas,Buskey,M,22,OnCourse,240,282.49872851594,270,270
+2018-09-28 17:32:53,092 [3] DEBUG Base.Communicator - Got a Status,3,OnCourse,210,757.167200330902,300,300 from 127.0.0.1:12000
+2018-09-28 17:32:53,092 [3] DEBUG Client.MainForm - Process messageText=Status,3,OnCourse,210,757.167200330902,300,300
+2018-09-28 17:32:53,092 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 3,Chung,Holdaway,M,36,OnCourse,210,757.167200330902,300,300
+2018-09-28 17:32:53,093 [3] DEBUG Base.Communicator - Got a Status,4,OnCourse,240,594.688320072367,300,300 from 127.0.0.1:12000
+2018-09-28 17:32:53,093 [3] DEBUG Client.MainForm - Process messageText=Status,4,OnCourse,240,594.688320072367,300,300
+2018-09-28 17:32:53,093 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 4,Dallas,Buskey,M,22,OnCourse,240,594.688320072367,300,300
+2018-09-28 17:32:54,095 [3] DEBUG Base.Communicator - Got a Status,3,OnCourse,210,1030.20660271731,330,330 from 127.0.0.1:12000
+2018-09-28 17:32:54,095 [3] DEBUG Client.MainForm - Process messageText=Status,3,OnCourse,210,1030.20660271731,330,330
+2018-09-28 17:32:54,095 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 3,Chung,Holdaway,M,36,OnCourse,210,1030.20660271731,330,330
+2018-09-28 17:32:54,096 [3] DEBUG Base.Communicator - Got a Status,4,OnCourse,240,865.459655180121,330,330 from 127.0.0.1:12000
+2018-09-28 17:32:54,098 [3] DEBUG Client.MainForm - Process messageText=Status,4,OnCourse,240,865.459655180121,330,330
+2018-09-28 17:32:54,098 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 4,Dallas,Buskey,M,22,OnCourse,240,865.459655180121,330,330
+2018-09-28 17:32:55,098 [3] DEBUG Base.Communicator - Got a Status,3,OnCourse,210,1302.72187753383,360,360 from 127.0.0.1:12000
+2018-09-28 17:32:55,098 [3] DEBUG Client.MainForm - Process messageText=Status,3,OnCourse,210,1302.72187753383,360,360
+2018-09-28 17:32:55,098 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 3,Chung,Holdaway,M,36,OnCourse,210,1302.72187753383,360,360
+2018-09-28 17:32:55,102 [3] DEBUG Base.Communicator - Got a Status,4,OnCourse,240,1136.62030971109,360,360 from 127.0.0.1:12000
+2018-09-28 17:32:55,102 [3] DEBUG Client.MainForm - Process messageText=Status,4,OnCourse,240,1136.62030971109,360,360
+2018-09-28 17:32:55,102 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 4,Dallas,Buskey,M,22,OnCourse,240,1136.62030971109,360,360
+2018-09-28 17:32:55,118 [3] DEBUG Base.Communicator - Got a Status,8,Started,360,0,360,360 from 127.0.0.1:12000
+2018-09-28 17:32:55,118 [3] DEBUG Client.MainForm - Process messageText=Status,8,Started,360,0,360,360
+2018-09-28 17:32:55,118 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 8,Eugenio,Fant,M,36,Started,360,0,360,360
+2018-09-28 17:32:56,100 [3] DEBUG Base.Communicator - Got a Status,3,OnCourse,210,1546.72647709787,390,390 from 127.0.0.1:12000
+2018-09-28 17:32:56,100 [3] DEBUG Client.MainForm - Process messageText=Status,3,OnCourse,210,1546.72647709787,390,390
+2018-09-28 17:32:56,100 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 3,Chung,Holdaway,M,36,OnCourse,210,1546.72647709787,390,390
+2018-09-28 17:32:56,101 [3] DEBUG Base.Communicator - Got a Status,4,OnCourse,240,1431.57781222551,390,390 from 127.0.0.1:12000
+2018-09-28 17:32:56,102 [3] DEBUG Client.MainForm - Process messageText=Status,4,OnCourse,240,1431.57781222551,390,390
+2018-09-28 17:32:56,102 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 4,Dallas,Buskey,M,22,OnCourse,240,1431.57781222551,390,390
+2018-09-28 17:32:56,105 [3] DEBUG Base.Communicator - Got a Status,8,OnCourse,360,244.15446427834,390,390 from 127.0.0.1:12000
+2018-09-28 17:32:56,105 [3] DEBUG Client.MainForm - Process messageText=Status,8,OnCourse,360,244.15446427834,390,390
+2018-09-28 17:32:56,105 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 8,Eugenio,Fant,M,36,OnCourse,360,244.15446427834,390,390
+2018-09-28 17:32:57,103 [3] DEBUG Base.Communicator - Got a Status,3,OnCourse,210,1791.06803799591,420,420 from 127.0.0.1:12000
+2018-09-28 17:32:57,103 [3] DEBUG Client.MainForm - Process messageText=Status,3,OnCourse,210,1791.06803799591,420,420
+2018-09-28 17:32:57,103 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 3,Chung,Holdaway,M,36,OnCourse,210,1791.06803799591,420,420
+2018-09-28 17:32:57,104 [3] DEBUG Base.Communicator - Got a Status,4,OnCourse,240,1715.89716462757,420,420 from 127.0.0.1:12000
+2018-09-28 17:32:57,105 [3] DEBUG Client.MainForm - Process messageText=Status,4,OnCourse,240,1715.89716462757,420,420
+2018-09-28 17:32:57,105 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 4,Dallas,Buskey,M,22,OnCourse,240,1715.89716462757,420,420
+2018-09-28 17:32:57,108 [3] DEBUG Base.Communicator - Got a Status,8,OnCourse,360,484.388640798754,420,420 from 127.0.0.1:12000
+2018-09-28 17:32:57,108 [3] DEBUG Client.MainForm - Process messageText=Status,8,OnCourse,360,484.388640798754,420,420
+2018-09-28 17:32:57,108 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 8,Eugenio,Fant,M,36,OnCourse,360,484.388640798754,420,420
+2018-09-28 17:32:58,107 [3] DEBUG Base.Communicator - Got a Status,3,OnCourse,210,2039.53359483319,450,450 from 127.0.0.1:12000
+2018-09-28 17:32:58,107 [3] DEBUG Client.MainForm - Process messageText=Status,3,OnCourse,210,2039.53359483319,450,450
+2018-09-28 17:32:58,107 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 3,Chung,Holdaway,M,36,OnCourse,210,2039.53359483319,450,450
+2018-09-28 17:32:58,108 [3] DEBUG Base.Communicator - Got a Status,4,OnCourse,240,2034.84682031844,450,450 from 127.0.0.1:12000
+2018-09-28 17:32:58,108 [3] DEBUG Client.MainForm - Process messageText=Status,4,OnCourse,240,2034.84682031844,450,450
+2018-09-28 17:32:58,108 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 4,Dallas,Buskey,M,22,OnCourse,240,2034.84682031844,450,450
+2018-09-28 17:32:58,110 [3] DEBUG Base.Communicator - Got a Status,8,OnCourse,360,786.117810959815,450,450 from 127.0.0.1:12000
+2018-09-28 17:32:58,110 [3] DEBUG Client.MainForm - Process messageText=Status,8,OnCourse,360,786.117810959815,450,450
+2018-09-28 17:32:58,110 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 8,Eugenio,Fant,M,36,OnCourse,360,786.117810959815,450,450
+2018-09-28 17:32:59,107 [3] DEBUG Base.Communicator - Got a Status,3,OnCourse,210,2319.40595715367,480,480 from 127.0.0.1:12000
+2018-09-28 17:32:59,107 [3] DEBUG Client.MainForm - Process messageText=Status,3,OnCourse,210,2319.40595715367,480,480
+2018-09-28 17:32:59,107 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 3,Chung,Holdaway,M,36,OnCourse,210,2319.40595715367,480,480
+2018-09-28 17:32:59,108 [3] DEBUG Base.Communicator - Got a Status,4,OnCourse,240,2349.33148767402,480,480 from 127.0.0.1:12000
+2018-09-28 17:32:59,108 [3] DEBUG Client.MainForm - Process messageText=Status,4,OnCourse,240,2349.33148767402,480,480
+2018-09-28 17:32:59,108 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 4,Dallas,Buskey,M,22,OnCourse,240,2349.33148767402,480,480
+2018-09-28 17:32:59,111 [3] DEBUG Base.Communicator - Got a Status,8,OnCourse,360,1034.44915855428,480,480 from 127.0.0.1:12000
+2018-09-28 17:32:59,111 [3] DEBUG Client.MainForm - Process messageText=Status,8,OnCourse,360,1034.44915855428,480,480
+2018-09-28 17:32:59,111 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 8,Eugenio,Fant,M,36,OnCourse,360,1034.44915855428,480,480
+2018-09-28 17:33:00,112 [3] DEBUG Base.Communicator - Got a Status,3,OnCourse,210,2597.63469182304,510,510 from 127.0.0.1:12000
+2018-09-28 17:33:00,112 [3] DEBUG Client.MainForm - Process messageText=Status,3,OnCourse,210,2597.63469182304,510,510
+2018-09-28 17:33:00,112 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 3,Chung,Holdaway,M,36,OnCourse,210,2597.63469182304,510,510
+2018-09-28 17:33:00,114 [3] DEBUG Base.Communicator - Got a Status,4,OnCourse,240,2657.50758241375,510,510 from 127.0.0.1:12000
+2018-09-28 17:33:00,114 [3] DEBUG Client.MainForm - Process messageText=Status,4,OnCourse,240,2657.50758241375,510,510
+2018-09-28 17:33:00,114 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 4,Dallas,Buskey,M,22,OnCourse,240,2657.50758241375,510,510
+2018-09-28 17:33:00,116 [3] DEBUG Base.Communicator - Got a Status,8,OnCourse,360,1309.10574153101,510,510 from 127.0.0.1:12000
+2018-09-28 17:33:00,116 [3] DEBUG Client.MainForm - Process messageText=Status,8,OnCourse,360,1309.10574153101,510,510
+2018-09-28 17:33:00,116 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 8,Eugenio,Fant,M,36,OnCourse,360,1309.10574153101,510,510
+2018-09-28 17:33:00,139 [1] DEBUG Base.Communicator - Send Unsubscribe,8 to 127.0.0.1:12000
+2018-09-28 17:33:01,114 [3] DEBUG Base.Communicator - Got a Status,3,OnCourse,210,2863.69105324841,540,540 from 127.0.0.1:12000
+2018-09-28 17:33:01,114 [3] DEBUG Client.MainForm - Process messageText=Status,3,OnCourse,210,2863.69105324841,540,540
+2018-09-28 17:33:01,114 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 3,Chung,Holdaway,M,36,OnCourse,210,2863.69105324841,540,540
+2018-09-28 17:33:01,116 [3] DEBUG Base.Communicator - Got a Status,4,OnCourse,240,2961.00161605866,540,540 from 127.0.0.1:12000
+2018-09-28 17:33:01,116 [3] DEBUG Client.MainForm - Process messageText=Status,4,OnCourse,240,2961.00161605866,540,540
+2018-09-28 17:33:01,116 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 4,Dallas,Buskey,M,22,OnCourse,240,2961.00161605866,540,540
+2018-09-28 17:33:02,117 [3] DEBUG Base.Communicator - Got a Status,3,OnCourse,210,3136.74347839335,570,570 from 127.0.0.1:12000
+2018-09-28 17:33:02,117 [3] DEBUG Client.MainForm - Process messageText=Status,3,OnCourse,210,3136.74347839335,570,570
+2018-09-28 17:33:02,117 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 3,Chung,Holdaway,M,36,OnCourse,210,3136.74347839335,570,570
+2018-09-28 17:33:02,120 [3] DEBUG Base.Communicator - Got a Status,4,OnCourse,240,3250.70900180859,570,570 from 127.0.0.1:12000
+2018-09-28 17:33:02,120 [3] DEBUG Client.MainForm - Process messageText=Status,4,OnCourse,240,3250.70900180859,570,570
+2018-09-28 17:33:02,120 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 4,Dallas,Buskey,M,22,OnCourse,240,3250.70900180859,570,570
+2018-09-28 17:33:03,114 [3] DEBUG Base.Communicator - Got a Status,3,OnCourse,210,3413.60807504171,600,600 from 127.0.0.1:12000
+2018-09-28 17:33:03,114 [3] DEBUG Client.MainForm - Process messageText=Status,3,OnCourse,210,3413.60807504171,600,600
+2018-09-28 17:33:03,114 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 3,Chung,Holdaway,M,36,OnCourse,210,3413.60807504171,600,600
+2018-09-28 17:33:03,119 [3] DEBUG Base.Communicator - Got a Status,4,OnCourse,240,3520.42783002904,600,600 from 127.0.0.1:12000
+2018-09-28 17:33:03,119 [3] DEBUG Client.MainForm - Process messageText=Status,4,OnCourse,240,3520.42783002904,600,600
+2018-09-28 17:33:03,119 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 4,Dallas,Buskey,M,22,OnCourse,240,3520.42783002904,600,600
+2018-09-28 17:33:04,118 [3] DEBUG Base.Communicator - Got a Status,3,OnCourse,210,3657.99502165178,630,630 from 127.0.0.1:12000
+2018-09-28 17:33:04,118 [3] DEBUG Client.MainForm - Process messageText=Status,3,OnCourse,210,3657.99502165178,630,630
+2018-09-28 17:33:04,118 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 3,Chung,Holdaway,M,36,OnCourse,210,3657.99502165178,630,630
+2018-09-28 17:33:04,120 [3] DEBUG Base.Communicator - Got a Status,4,OnCourse,240,3798.95055603492,630,630 from 127.0.0.1:12000
+2018-09-28 17:33:04,120 [3] DEBUG Client.MainForm - Process messageText=Status,4,OnCourse,240,3798.95055603492,630,630
+2018-09-28 17:33:04,120 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 4,Dallas,Buskey,M,22,OnCourse,240,3798.95055603492,630,630
+2018-09-28 17:33:05,124 [3] DEBUG Base.Communicator - Got a Status,3,OnCourse,210,3932.7034325645,660,660 from 127.0.0.1:12000
+2018-09-28 17:33:05,124 [3] DEBUG Client.MainForm - Process messageText=Status,3,OnCourse,210,3932.7034325645,660,660
+2018-09-28 17:33:05,124 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 3,Chung,Holdaway,M,36,OnCourse,210,3932.7034325645,660,660
+2018-09-28 17:33:05,127 [3] DEBUG Base.Communicator - Got a Status,4,OnCourse,240,4067.18756288465,660,660 from 127.0.0.1:12000
+2018-09-28 17:33:05,127 [3] DEBUG Client.MainForm - Process messageText=Status,4,OnCourse,240,4067.18756288465,660,660
+2018-09-28 17:33:05,127 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 4,Dallas,Buskey,M,22,OnCourse,240,4067.18756288465,660,660
+2018-09-28 17:33:06,108 [1] DEBUG Base.Communicator - Send Subscribe,1 to 127.0.0.1:12000
+2018-09-28 17:33:06,121 [3] DEBUG Base.Communicator - Got a Status,1,OnCourse,150,4751.75980478295,690,690 from 127.0.0.1:12000
+2018-09-28 17:33:06,121 [3] DEBUG Client.MainForm - Process messageText=Status,1,OnCourse,150,4751.75980478295,690,690
+2018-09-28 17:33:06,121 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 1,Valentine,Zamora,M,30,OnCourse,150,4751.75980478295,690,690
+2018-09-28 17:33:06,123 [3] DEBUG Base.Communicator - Got a Status,3,OnCourse,210,4197.52232821599,690,690 from 127.0.0.1:12000
+2018-09-28 17:33:06,123 [3] DEBUG Client.MainForm - Process messageText=Status,3,OnCourse,210,4197.52232821599,690,690
+2018-09-28 17:33:06,123 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 3,Chung,Holdaway,M,36,OnCourse,210,4197.52232821599,690,690
+2018-09-28 17:33:06,123 [3] DEBUG Base.Communicator - Got a Status,4,OnCourse,240,4373.38244964756,690,690 from 127.0.0.1:12000
+2018-09-28 17:33:06,123 [3] DEBUG Client.MainForm - Process messageText=Status,4,OnCourse,240,4373.38244964756,690,690
+2018-09-28 17:33:06,124 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 4,Dallas,Buskey,M,22,OnCourse,240,4373.38244964756,690,690
+2018-09-28 17:33:07,125 [3] DEBUG Base.Communicator - Got a Status,1,OnCourse,150,5001.11690523172,720,720 from 127.0.0.1:12000
+2018-09-28 17:33:07,125 [3] DEBUG Client.MainForm - Process messageText=Status,1,OnCourse,150,5001.11690523172,720,720
+2018-09-28 17:33:07,125 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 1,Valentine,Zamora,M,30,OnCourse,150,5001.11690523172,720,720
+2018-09-28 17:33:07,131 [3] DEBUG Base.Communicator - Got a Status,3,OnCourse,210,4477.76241188662,720,720 from 127.0.0.1:12000
+2018-09-28 17:33:07,131 [3] DEBUG Client.MainForm - Process messageText=Status,3,OnCourse,210,4477.76241188662,720,720
+2018-09-28 17:33:07,132 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 3,Chung,Holdaway,M,36,OnCourse,210,4477.76241188662,720,720
+2018-09-28 17:33:07,135 [3] DEBUG Base.Communicator - Got a Status,4,OnCourse,240,4689.59844734518,720,720 from 127.0.0.1:12000
+2018-09-28 17:33:07,135 [3] DEBUG Client.MainForm - Process messageText=Status,4,OnCourse,240,4689.59844734518,720,720
+2018-09-28 17:33:07,135 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 4,Dallas,Buskey,M,22,OnCourse,240,4689.59844734518,720,720
+2018-09-28 17:33:08,128 [3] DEBUG Base.Communicator - Got a Status,1,OnCourse,150,5251.11317654669,750,750 from 127.0.0.1:12000
+2018-09-28 17:33:08,128 [3] DEBUG Client.MainForm - Process messageText=Status,1,OnCourse,150,5251.11317654669,750,750
+2018-09-28 17:33:08,128 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 1,Valentine,Zamora,M,30,OnCourse,150,5251.11317654669,750,750
+2018-09-28 17:33:08,133 [3] DEBUG Base.Communicator - Got a Status,3,OnCourse,210,4757.56921236621,750,750 from 127.0.0.1:12000
+2018-09-28 17:33:08,133 [3] DEBUG Client.MainForm - Process messageText=Status,3,OnCourse,210,4757.56921236621,750,750
+2018-09-28 17:33:08,133 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 3,Chung,Holdaway,M,36,OnCourse,210,4757.56921236621,750,750
+2018-09-28 17:33:08,134 [3] DEBUG Base.Communicator - Got a Status,4,OnCourse,240,5008.84596654155,750,750 from 127.0.0.1:12000
+2018-09-28 17:33:08,134 [3] DEBUG Client.MainForm - Process messageText=Status,4,OnCourse,240,5008.84596654155,750,750
+2018-09-28 17:33:08,134 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 4,Dallas,Buskey,M,22,OnCourse,240,5008.84596654155,750,750
+2018-09-28 17:33:09,130 [3] DEBUG Base.Communicator - Got a Status,1,OnCourse,150,5497.20382736923,780,780 from 127.0.0.1:12000
+2018-09-28 17:33:09,130 [3] DEBUG Client.MainForm - Process messageText=Status,1,OnCourse,150,5497.20382736923,780,780
+2018-09-28 17:33:09,130 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 1,Valentine,Zamora,M,30,OnCourse,150,5497.20382736923,780,780
+2018-09-28 17:33:09,134 [3] DEBUG Base.Communicator - Got a Status,3,OnCourse,210,5016.98442303157,780,780 from 127.0.0.1:12000
+2018-09-28 17:33:09,134 [3] DEBUG Client.MainForm - Process messageText=Status,3,OnCourse,210,5016.98442303157,780,780
+2018-09-28 17:33:09,134 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 3,Chung,Holdaway,M,36,OnCourse,210,5016.98442303157,780,780
+2018-09-28 17:33:09,135 [3] DEBUG Base.Communicator - Got a Status,4,OnCourse,240,5327.94192695461,780,780 from 127.0.0.1:12000
+2018-09-28 17:33:09,135 [3] DEBUG Client.MainForm - Process messageText=Status,4,OnCourse,240,5327.94192695461,780,780
+2018-09-28 17:33:09,135 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 4,Dallas,Buskey,M,22,OnCourse,240,5327.94192695461,780,780
+2018-09-28 17:33:10,134 [3] DEBUG Base.Communicator - Got a Status,1,OnCourse,150,5780.522387296,810,810 from 127.0.0.1:12000
+2018-09-28 17:33:10,135 [3] DEBUG Client.MainForm - Process messageText=Status,1,OnCourse,150,5780.522387296,810,810
+2018-09-28 17:33:10,135 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 1,Valentine,Zamora,M,30,OnCourse,150,5780.522387296,810,810
+2018-09-28 17:33:10,169 [3] DEBUG Base.Communicator - Got a Status,3,OnCourse,210,5300.93949808981,810,810 from 127.0.0.1:12000
+2018-09-28 17:33:10,169 [3] DEBUG Client.MainForm - Process messageText=Status,3,OnCourse,210,5300.93949808981,810,810
+2018-09-28 17:33:10,169 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 3,Chung,Holdaway,M,36,OnCourse,210,5300.93949808981,810,810
+2018-09-28 17:33:10,171 [3] DEBUG Base.Communicator - Got a Status,4,OnCourse,240,5627.37501202221,810,810 from 127.0.0.1:12000
+2018-09-28 17:33:10,171 [3] DEBUG Client.MainForm - Process messageText=Status,4,OnCourse,240,5627.37501202221,810,810
+2018-09-28 17:33:10,171 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 4,Dallas,Buskey,M,22,OnCourse,240,5627.37501202221,810,810
+2018-09-28 17:33:11,136 [3] DEBUG Base.Communicator - Got a Status,1,OnCourse,150,6069.56162883685,840,840 from 127.0.0.1:12000
+2018-09-28 17:33:11,136 [3] DEBUG Client.MainForm - Process messageText=Status,1,OnCourse,150,6069.56162883685,840,840
+2018-09-28 17:33:11,136 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 1,Valentine,Zamora,M,30,OnCourse,150,6069.56162883685,840,840
+2018-09-28 17:33:11,142 [3] DEBUG Base.Communicator - Got a Status,3,OnCourse,210,5590.03178152784,840,840 from 127.0.0.1:12000
+2018-09-28 17:33:11,142 [3] DEBUG Client.MainForm - Process messageText=Status,3,OnCourse,210,5590.03178152784,840,840
+2018-09-28 17:33:11,142 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 3,Chung,Holdaway,M,36,OnCourse,210,5590.03178152784,840,840
+2018-09-28 17:33:11,143 [3] DEBUG Base.Communicator - Got a Status,4,OnCourse,240,5905.42305207515,840,840 from 127.0.0.1:12000
+2018-09-28 17:33:11,143 [3] DEBUG Client.MainForm - Process messageText=Status,4,OnCourse,240,5905.42305207515,840,840
+2018-09-28 17:33:11,143 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 4,Dallas,Buskey,M,22,OnCourse,240,5905.42305207515,840,840
+2018-09-28 17:33:12,139 [3] DEBUG Base.Communicator - Got a Status,1,OnCourse,150,6326.54268784647,870,870 from 127.0.0.1:12000
+2018-09-28 17:33:12,139 [3] DEBUG Client.MainForm - Process messageText=Status,1,OnCourse,150,6326.54268784647,870,870
+2018-09-28 17:33:12,139 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 1,Valentine,Zamora,M,30,OnCourse,150,6326.54268784647,870,870
+2018-09-28 17:33:12,143 [3] DEBUG Base.Communicator - Got a Status,3,OnCourse,210,5844.54413420405,870,870 from 127.0.0.1:12000
+2018-09-28 17:33:12,143 [3] DEBUG Client.MainForm - Process messageText=Status,3,OnCourse,210,5844.54413420405,870,870
+2018-09-28 17:33:12,143 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 3,Chung,Holdaway,M,36,OnCourse,210,5844.54413420405,870,870
+2018-09-28 17:33:12,144 [3] DEBUG Base.Communicator - Got a Status,4,OnCourse,240,6222.74145521691,870,870 from 127.0.0.1:12000
+2018-09-28 17:33:12,144 [3] DEBUG Client.MainForm - Process messageText=Status,4,OnCourse,240,6222.74145521691,870,870
+2018-09-28 17:33:12,144 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 4,Dallas,Buskey,M,22,OnCourse,240,6222.74145521691,870,870
+2018-09-28 17:33:13,142 [3] DEBUG Base.Communicator - Got a Status,1,OnCourse,150,6591.01523905204,900,900 from 127.0.0.1:12000
+2018-09-28 17:33:13,142 [3] DEBUG Client.MainForm - Process messageText=Status,1,OnCourse,150,6591.01523905204,900,900
+2018-09-28 17:33:13,142 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 1,Valentine,Zamora,M,30,OnCourse,150,6591.01523905204,900,900
+2018-09-28 17:33:13,146 [3] DEBUG Base.Communicator - Got a Status,3,OnCourse,210,6086.55537598362,900,900 from 127.0.0.1:12000
+2018-09-28 17:33:13,146 [3] DEBUG Client.MainForm - Process messageText=Status,3,OnCourse,210,6086.55537598362,900,900
+2018-09-28 17:33:13,146 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 3,Chung,Holdaway,M,36,OnCourse,210,6086.55537598362,900,900
+2018-09-28 17:33:13,147 [3] DEBUG Base.Communicator - Got a Status,4,OnCourse,240,6490.9204502836,900,900 from 127.0.0.1:12000
+2018-09-28 17:33:13,147 [3] DEBUG Client.MainForm - Process messageText=Status,4,OnCourse,240,6490.9204502836,900,900
+2018-09-28 17:33:13,147 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 4,Dallas,Buskey,M,22,OnCourse,240,6490.9204502836,900,900
+2018-09-28 17:33:14,146 [3] DEBUG Base.Communicator - Got a Status,1,OnCourse,150,6846.46334030804,930,930 from 127.0.0.1:12000
+2018-09-28 17:33:14,146 [3] DEBUG Client.MainForm - Process messageText=Status,1,OnCourse,150,6846.46334030804,930,930
+2018-09-28 17:33:14,146 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 1,Valentine,Zamora,M,30,OnCourse,150,6846.46334030804,930,930
+2018-09-28 17:33:14,151 [3] DEBUG Base.Communicator - Got a Status,3,OnCourse,210,6364.21387827727,930,930 from 127.0.0.1:12000
+2018-09-28 17:33:14,151 [3] DEBUG Client.MainForm - Process messageText=Status,3,OnCourse,210,6364.21387827727,930,930
+2018-09-28 17:33:14,151 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 3,Chung,Holdaway,M,36,OnCourse,210,6364.21387827727,930,930
+2018-09-28 17:33:14,152 [3] DEBUG Base.Communicator - Got a Status,4,OnCourse,240,6789.30702646167,930,930 from 127.0.0.1:12000
+2018-09-28 17:33:14,152 [3] DEBUG Client.MainForm - Process messageText=Status,4,OnCourse,240,6789.30702646167,930,930
+2018-09-28 17:33:14,152 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 4,Dallas,Buskey,M,22,OnCourse,240,6789.30702646167,930,930
+2018-09-28 17:33:15,148 [3] DEBUG Base.Communicator - Got a Status,1,OnCourse,150,7102.26769075438,960,960 from 127.0.0.1:12000
+2018-09-28 17:33:15,148 [3] DEBUG Client.MainForm - Process messageText=Status,1,OnCourse,150,7102.26769075438,960,960
+2018-09-28 17:33:15,148 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 1,Valentine,Zamora,M,30,OnCourse,150,7102.26769075438,960,960
+2018-09-28 17:33:15,153 [3] DEBUG Base.Communicator - Got a Status,3,OnCourse,210,6614.01796487518,960,960 from 127.0.0.1:12000
+2018-09-28 17:33:15,153 [3] DEBUG Client.MainForm - Process messageText=Status,3,OnCourse,210,6614.01796487518,960,960
+2018-09-28 17:33:15,153 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 3,Chung,Holdaway,M,36,OnCourse,210,6614.01796487518,960,960
+2018-09-28 17:33:15,153 [3] DEBUG Base.Communicator - Got a Status,4,OnCourse,240,7068.11504947991,960,960 from 127.0.0.1:12000
+2018-09-28 17:33:15,153 [3] DEBUG Client.MainForm - Process messageText=Status,4,OnCourse,240,7068.11504947991,960,960
+2018-09-28 17:33:15,153 [3] DEBUG Client.Processor.AthleteStatusProcessor - Update athlete 4,Dallas,Buskey,M,22,OnCourse,240,7068.11504947991,960,960
