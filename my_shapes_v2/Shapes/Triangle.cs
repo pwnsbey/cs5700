@@ -2,7 +2,7 @@
 
 namespace Shapes
 {
-    public class Triangle : ComplexShape
+    public class Triangle : Shape
     {
         public Point Point1 { get; private set; }
         public Point Point2 { get; private set; }

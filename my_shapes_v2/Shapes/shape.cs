@@ -12,5 +12,10 @@ namespace Shapes
          * @throws ShapeException   Exception throw if any parameter is invalid
          */
         public abstract void Move(double deltaX, double deltaY);
+
+        /**
+         * @return the area of the shape
+         */
+        public abstract double ComputeArea();
     }
 }

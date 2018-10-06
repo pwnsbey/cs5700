@@ -65,5 +65,10 @@ namespace Shapes
         {
             return (Point2.Y - Point1.Y) / (Point2.X - Point1.X);
         }
+
+        public override double ComputeArea()
+        {
+            return 0;
+        }
     }
 }

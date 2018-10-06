@@ -2,7 +2,7 @@
 
 namespace Shapes
 {
-    public class Ellipse : ComplexShape
+    public class Ellipse : Shape
     {
         public Point Center { get; private set; }
         public double VertRadius { get; private set;  }

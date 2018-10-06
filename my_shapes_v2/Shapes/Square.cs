@@ -2,7 +2,7 @@
 
 namespace Shapes
 {
-    public class Square: ComplexShape
+    public class Square: Shape
     {
         private Rectangle Rectangle;
 

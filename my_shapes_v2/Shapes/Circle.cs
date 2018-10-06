@@ -2,7 +2,7 @@
 
 namespace Shapes
 {
-    public class Circle : ComplexShape
+    public class Circle : Shape
     {
         private Ellipse Ellipse;
 

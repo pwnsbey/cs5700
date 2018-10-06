@@ -67,5 +67,10 @@
         {
             return (X == otherPoint.X && Y == otherPoint.Y);
         }
+
+        public override double ComputeArea()
+        {
+            return 0;
+        }
     }
 }
