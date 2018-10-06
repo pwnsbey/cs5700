@@ -55,6 +55,7 @@
     <Compile Include="Rectangle.cs" />
     <Compile Include="Shape.cs" />
     <Compile Include="ShapeException.cs" />
+    <Compile Include="ShapeFactory.cs" />
     <Compile Include="Square.cs" />
     <Compile Include="Triangle.cs" />
     <Compile Include="Validator.cs" />
