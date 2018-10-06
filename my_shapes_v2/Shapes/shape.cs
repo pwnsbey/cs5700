@@ -4,6 +4,8 @@ namespace Shapes
 {
     public abstract class Shape
     {
+        public bool IsComposited = false;
+
         /**
          * Move a shape
          *

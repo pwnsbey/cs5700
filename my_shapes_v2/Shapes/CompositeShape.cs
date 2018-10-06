@@ -6,6 +6,7 @@ namespace Shapes
     public class CompositeShape: Shape
     {
         private List<Shape> Shapes;
+        public bool IsComposited = true;
 
         public List<Shape> GetShapes()
         {
@@ -14,16 +15,23 @@ namespace Shapes
 
         public void AddShape(Shape shape)
         {
-            Shapes.Add(shape);
+            if (!shape.IsComposited)
+            {
+                Shapes.Add(shape);
+                shape.IsComposited = true;
+            }
         }
 
         public void RemoveShape(int shapeIndex)
         {
+            Shapes[shapeIndex].IsComposited = false;
             Shapes.RemoveAt(shapeIndex);
         }
 
         public void ClearShapes()
         {
+            foreach (Shape shape in Shapes)
+                shape.IsComposited = false;
             Shapes.Clear();
         }
 
