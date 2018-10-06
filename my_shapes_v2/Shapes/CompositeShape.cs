@@ -7,6 +7,17 @@ namespace Shapes
     {
         private List<Shape> Shapes;
         public bool IsComposited = true;
+        public Point Center;
+
+        public CompositeShape(Point center)
+        {
+            Center = center;
+        }
+
+        public CompositeShape(double x, double y)
+        {
+            Center = new Point(x, y);
+        }
 
         public List<Shape> GetShapes()
         {
