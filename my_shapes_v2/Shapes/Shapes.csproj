@@ -38,6 +38,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,7 +48,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Circle.cs" />
-    <Compile Include="ComplexShape.cs" />
+    <Compile Include="CompositeShape.cs" />
+    <Compile Include="EmbeddedPicture.cs" />
+    <Compile Include="PictureImage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Ellipse.cs" />
     <Compile Include="Line.cs" />
