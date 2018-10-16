@@ -91,5 +91,12 @@ namespace Shapes
             Point2.Move(deltaX, deltaY);
             Point3.Move(deltaX, deltaY);
         }
+
+        public override string ToScript()
+        {
+            return "shape:triangle,x1:" + Point1.X.ToString() + ",y1:" + Point1.Y.ToString() +
+                   ",x2:" + Point2.X.ToString() + ",y2:" + Point2.Y.ToString() +
+                   ",x3:" + Point3.X.ToString() + ",y3:" + Point3.Y.ToString();
+        }
     }
 }

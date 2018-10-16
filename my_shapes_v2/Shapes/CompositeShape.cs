@@ -6,7 +6,7 @@ namespace Shapes
     public class CompositeShape: Shape
     {
         private List<Shape> Shapes;
-        public bool IsComposited = true;
+        public new bool IsComposited = true;
         public Point Center;
 
         public CompositeShape(Point center)
@@ -60,6 +60,18 @@ namespace Shapes
         {
             foreach (Shape shape in Shapes)
                 shape.Move(deltaX, deltaY);
+        }
+
+        public override string ToScript()
+        {
+            string returnScript = "#|shape:compositeshape,x:" + Center.X.ToString() + ",y:" + Center.Y.ToString() + "|";
+
+            foreach (Shape shape in Shapes)
+            {
+                returnScript += shape.ToScript() + "|";
+            }
+
+            return returnScript;
         }
     }
 }

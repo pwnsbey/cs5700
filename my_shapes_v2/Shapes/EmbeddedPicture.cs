@@ -28,5 +28,12 @@ namespace Shapes
         {
             ImageBounds.Move(deltaX, deltaY);
         }
+
+        public override string ToScript()
+        {
+            return "shape:embeddedpicture,imageid:" + Image.id +
+                   ",x1:" + ImageBounds.Point1.X.ToString() + ",y1:" + ImageBounds.Point1.Y.ToString() +
+                   ",x2:" + ImageBounds.Point2.X.ToString() + ",y2:" + ImageBounds.Point2.Y.ToString();
+        }
     }
 }

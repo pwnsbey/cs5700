@@ -77,5 +77,11 @@ namespace Shapes
         {
             Rectangle.Move(deltaX, deltaY);
         }
+
+        public override string ToScript()
+        {
+            return "shape:square,cornerx:" + Rectangle.Point1.X.ToString() + ",cornery:" +
+                   Rectangle.Point1.Y.ToString() + ",sidelength:" + GetSide().ToString();
+        }
     }
 }

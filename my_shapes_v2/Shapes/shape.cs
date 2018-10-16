@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Shapes
 {
@@ -19,5 +20,10 @@ namespace Shapes
          * @return the area of the shape
          */
         public abstract double ComputeArea();
+
+        /**
+         * @return a string script representing all object attributes
+         */
+        public abstract string ToScript();
     }
 }

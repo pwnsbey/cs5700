@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Shapes
 {
@@ -73,6 +74,12 @@ namespace Shapes
         public override double ComputeArea()
         {
             return Ellipse.ComputeArea();
+        }
+
+        public override string ToScript()
+        {
+            return "shape:circle,x:" + Ellipse.Center.X.ToString() + ",y:" + Ellipse.Center.Y.ToString() + 
+                   ",radius:" + Ellipse.HorizRadius.ToString();
         }
     }
 }

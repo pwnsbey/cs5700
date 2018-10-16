@@ -5,39 +5,103 @@ namespace Shapes
 {
     public class ShapeFactory
     {
-        //public Shape MakeShape(string shapeName)
-        //{
-        //    shapeName = shapeName.ToLower();
-        //    switch (shapeName)
-        //    {
-        //        case "point":
-        //            return new Point(0,0);
-        //        case "line":
-        //            return new Line(0, 0, 1, 1);
-        //        case "ellipse":
-        //            return new Ellipse(0, 0, 1, 2);
-        //        case "circle":
-        //            return new Circle(0, 0, 1);
-        //        case "rectangle":
-        //            return new Rectangle(0, 0, 2, 1);
-        //        case "square":
-        //            return new Square(0, 0, 1);
-        //        case "triangle":
-        //            return new Triangle(0, 0, 1, 0, 0, 1);
-        //        case "compositeshape":
-        //            return new CompositeShape(0, 0);
-        //        case "embeddedpicture":
-        //            return null;  // TODO
-        //        default:
-        //            return null;
-        //    }
-        //}
-
         private List<PictureImage> AvailableImages;
 
         public ShapeFactory()
         {
             AvailableImages = new List<PictureImage>();
+        }
+
+        /**
+         * Utility function to parse out script strings.
+         * 
+         * @param script the script to parse
+         */
+        private Dictionary<string, string> ParseScript(string script)
+        {
+            Dictionary<string, string> scriptDict = new Dictionary<string, string>();
+            string[] varStrings = script.Split(',');
+            foreach (string varString in varStrings)
+            {
+                string[] varVal = varString.Split(':');
+                scriptDict.Add(varVal[0], varVal[1]);
+            }
+            return scriptDict;
+        }
+
+        /**
+         * Utility function to parse out script strings for composite shapes.
+         * 
+         * @param script the script to parse
+         */
+        private List<Dictionary<string, string>> ParseCompositeScript(string script)
+        {
+            script = script.Remove(0, 2);
+
+            List<Dictionary<string, string>> shapesDict = new List<Dictionary<string, string>>();
+            string[] shapeStrings = script.Split('|');
+            foreach (string shapeString in shapeStrings)
+                shapesDict.Add(ParseScript(shapeString));
+            return shapesDict;
+        }
+
+        public Shape MakeShapeFromScript(string script)
+        {
+            try
+            {
+                // special case for composite shapes
+                if (script[0] == '#')
+                {
+                    List<Dictionary<string, string>> compValDict = ParseCompositeScript(script);
+                    CompositeShape compositeShape = MakeCompositeShape(int.Parse(compValDict[0]["x"]),
+                                                                       int.Parse(compValDict[1]["y"]));
+                    for (int i = 1; i < compValDict.Count; i++)
+                    {
+                        Dictionary<string, string> shapeDict = compValDict[i];
+                        compositeShape.AddShape(ShapeFromDict(shapeDict));
+                    }
+                    return compositeShape;
+                }
+                else
+                    return ShapeFromDict(ParseScript(script));
+            }
+            catch
+            {
+                throw new ShapeException("Invalid shape script");
+            }
+        }
+
+        private Shape ShapeFromDict(Dictionary<string, string> valDict)
+        {
+            switch (valDict["shape"])
+            {
+                case "point":
+                    return MakePoint(int.Parse(valDict["x"]), int.Parse(valDict["y"]));
+                case "line":
+                    return MakeLine(int.Parse(valDict["x1"]), int.Parse(valDict["y1"]), 
+                                    int.Parse(valDict["x2"]), int.Parse(valDict["y2"]));
+                case "ellipse":
+                    return MakeEllipse(int.Parse(valDict["x"]), int.Parse(valDict["y"]), 
+                                       int.Parse(valDict["horizradius"]), int.Parse(valDict["vertradius"]));
+                case "circle":
+                    return MakeCircle(int.Parse(valDict["x"]), int.Parse(valDict["y"]), int.Parse(valDict["radius"]));
+                case "rectangle":
+                    return MakeRectangle(int.Parse(valDict["x1"]), int.Parse(valDict["y1"]),
+                                         int.Parse(valDict["x2"]), int.Parse(valDict["y2"]));
+                case "square":
+                    return MakeSquare(int.Parse(valDict["cornerx"]), int.Parse(valDict["cornery"]), 
+                                      int.Parse(valDict["sidelength"]));
+                case "triangle":
+                    return MakeTrangle(int.Parse(valDict["x1"]), int.Parse(valDict["y1"]),
+                                       int.Parse(valDict["x2"]), int.Parse(valDict["y2"]),
+                                       int.Parse(valDict["x3"]), int.Parse(valDict["y3"]));
+                case "embeddedpicture":
+                    PictureImage targetImage = AvailableImages.Find(image => image.id == int.Parse(valDict["imageid"]));
+                    return new EmbeddedPicture(targetImage, int.Parse(valDict["x1"]), int.Parse(valDict["y1"]),
+                                                            int.Parse(valDict["x2"]), int.Parse(valDict["y2"]));
+                default:
+                    throw new ShapeException("Invalid shape name");
+            };
         }
 
         public Point MakePoint(double x, double y)
@@ -91,6 +155,7 @@ namespace Shapes
                     return new EmbeddedPicture(img, MakePoint(x1, y1), MakePoint(x2, y2));
                 }
             }
+            newImg.id = (AvailableImages.Count);
             AvailableImages.Add(newImg);
             return new EmbeddedPicture(newImg, MakePoint(x1, y1), MakePoint(x2, y2));
         }
@@ -106,6 +171,7 @@ namespace Shapes
                     return new EmbeddedPicture(img, MakePoint(x1, y1), MakePoint(x2, y2));
                 }
             }
+            newImg.id = (AvailableImages.Count);
             AvailableImages.Add(newImg);
             return new EmbeddedPicture(newImg, MakePoint(x1, y1), MakePoint(x2, y2));
         }

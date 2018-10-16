@@ -80,5 +80,11 @@ namespace Shapes
         {
             return Math.PI * VertRadius * HorizRadius;
         }
+
+        public override string ToScript()
+        {
+            return "shape:ellipse,x:" + Center.X.ToString() + ",y:" + Center.Y.ToString() +
+                   ",vertradius:" + VertRadius.ToString() + ",horizradius:" + HorizRadius.ToString();
+        }
     }
 }

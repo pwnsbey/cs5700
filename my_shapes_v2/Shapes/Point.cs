@@ -72,5 +72,8 @@
         {
             return 0;
         }
+
+        public override string ToScript()
+            return "shape:point,x:" + X.ToString() + ",y:" + Y.ToString();
     }
 }

@@ -70,5 +70,11 @@ namespace Shapes
         {
             return 0;
         }
+
+        public override string ToScript()
+        {
+            return "shape:line,x1:" + Point1.X.ToString() + ",y1:" + Point1.Y.ToString() + 
+                   ",x2:" + Point2.X.ToString() + ",y2:" + Point2.Y.ToString();
+        }
     }
 }

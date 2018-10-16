@@ -6,6 +6,7 @@ namespace Shapes
     public class PictureImage
     {
         public Bitmap bitmap;
+        public int id;
 
         public PictureImage(string filepath)
         {
