@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 
 namespace Shapes
 {
@@ -82,6 +83,12 @@ namespace Shapes
         {
             return "shape:square,cornerx:" + Rectangle.Point1.X.ToString() + ",cornery:" +
                    Rectangle.Point1.Y.ToString() + ",sidelength:" + GetSide().ToString();
+        }
+
+        public override void Draw(Graphics graphics)
+        {
+            graphics.DrawRectangle(pen, (float)Rectangle.Point1.X, (float)Rectangle.Point1.Y, 
+                                        (float)Rectangle.Point2.X, (float)Rectangle.Point2.Y);
         }
     }
 }

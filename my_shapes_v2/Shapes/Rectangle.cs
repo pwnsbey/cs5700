@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 
 namespace Shapes
 {
@@ -96,6 +97,11 @@ namespace Shapes
         {
             return "shape:line,x1:" + Point1.X.ToString() + ",y1:" + Point1.Y.ToString() +
                    ",x2:" + Point2.X.ToString() + ",y2:" + Point2.Y.ToString();
+        }
+
+        public override void Draw(Graphics graphics)
+        {
+            graphics.DrawRectangle(pen, (float)Point1.X, (float)Point1.Y, (float)Point2.X, (float)Point2.Y);
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 
 namespace Shapes
 {
@@ -22,6 +23,12 @@ namespace Shapes
         public override double ComputeArea()
         {
             return ImageBounds.ComputeArea();
+        }
+
+        public override void Draw(Graphics graphics)
+        {
+            graphics.DrawImage(Image.bitmap, (float)ImageBounds.Point1.X, (float)ImageBounds.Point1.Y, 
+                                      (float)ImageBounds.Point2.X, (float)ImageBounds.Point2.Y);
         }
 
         public override void Move(double deltaX, double deltaY)

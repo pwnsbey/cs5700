@@ -304,5 +304,11 @@ namespace ShapesTests
             Assert.AreEqual(0, myCircle.ComputeArea(), 0);
 
         }
+
+        [TestMethod]
+        public void TestDraw()
+        {
+
+        }
     }
 }

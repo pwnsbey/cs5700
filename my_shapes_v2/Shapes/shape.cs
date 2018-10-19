@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 
 namespace Shapes
 {
     public abstract class Shape
     {
         public bool IsComposited = false;
+        public Pen pen = new Pen(Color.Black);
 
         /**
          * Move a shape
@@ -25,5 +27,12 @@ namespace Shapes
          * @return a string script representing all object attributes
          */
         public abstract string ToScript();
+
+        /**
+         * Render the shape to a given graphics object
+         * 
+         * @param graphics The graphics object to render the shape to.
+         */
+        public abstract void Draw(Graphics graphics);
     }
 }

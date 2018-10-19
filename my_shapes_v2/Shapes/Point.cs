@@ -1,4 +1,6 @@
-﻿namespace Shapes
+﻿using System.Drawing;
+
+namespace Shapes
 {
     public class Point : Shape
     {
@@ -74,6 +76,13 @@
         }
 
         public override string ToScript()
+        {
             return "shape:point,x:" + X.ToString() + ",y:" + Y.ToString();
+        }
+
+        public override void Draw(Graphics graphics)
+        {
+            graphics.DrawLine(pen, (float)X, (float)Y, (float)X, (float)Y);
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 
 namespace Shapes
 {
@@ -72,6 +73,12 @@ namespace Shapes
             }
 
             return returnScript;
+        }
+
+        public override void Draw(Graphics graphics)
+        {
+            foreach (Shape shape in Shapes)
+                shape.Draw(graphics);
         }
     }
 }

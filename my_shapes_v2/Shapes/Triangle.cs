@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 
 namespace Shapes
 {
@@ -97,6 +98,17 @@ namespace Shapes
             return "shape:triangle,x1:" + Point1.X.ToString() + ",y1:" + Point1.Y.ToString() +
                    ",x2:" + Point2.X.ToString() + ",y2:" + Point2.Y.ToString() +
                    ",x3:" + Point3.X.ToString() + ",y3:" + Point3.Y.ToString();
+        }
+
+        public override void Draw(Graphics graphics)
+        {
+            PointF[] lines =
+            {
+                new PointF((float)Point1.X, (float)Point1.Y),
+                new PointF((float)Point2.X, (float)Point2.Y),
+                new PointF((float)Point3.X, (float)Point3.Y)
+            };
+            graphics.DrawLines(pen, lines);
         }
     }
 }

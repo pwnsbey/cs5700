@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 
 namespace Shapes
 {
@@ -85,6 +86,12 @@ namespace Shapes
         {
             return "shape:ellipse,x:" + Center.X.ToString() + ",y:" + Center.Y.ToString() +
                    ",vertradius:" + VertRadius.ToString() + ",horizradius:" + HorizRadius.ToString();
+        }
+
+        public override void Draw(Graphics graphics)
+        {
+            graphics.DrawEllipse(pen, (float)Center.X, (float)Center.Y,
+                                      (float)VertRadius*2, (float)HorizRadius*2);
         }
     }
 }
