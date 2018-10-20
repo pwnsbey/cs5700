@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shapes;
+using System.Drawing;
 
 namespace ShapesTests
 {
@@ -9,20 +10,23 @@ namespace ShapesTests
         [TestMethod]
         public void TestValidConstruction()
         {
-            var p1 = new Point(1, 2);
+            ShapeFactory sf = new ShapeFactory();
+            var p1 = sf.MakePoint(1, 2);
             Assert.AreEqual(1, p1.X, 0);
             Assert.AreEqual(2, p1.Y, 0);
 
-            p1 = new Point(1.111, 2.222);
+            p1 = sf.MakePoint(1.111, 2.222);
             Assert.AreEqual(1.111, p1.X, 0);
             Assert.AreEqual(2.222, p1.Y, 0);
         }
 
         [TestMethod]
         public void TestInvalidConstruction() {
+            ShapeFactory sf = new ShapeFactory();
+
             try
             {
-                new Point(1, double.PositiveInfinity);
+                sf.MakePoint(1, double.PositiveInfinity);
                 Assert.Fail("Expected exception not thrown");
             }
             catch (ShapeException e)
@@ -32,7 +36,7 @@ namespace ShapesTests
 
             try
             {
-                new Point(1, double.NegativeInfinity);
+                sf.MakePoint(1, double.NegativeInfinity);
                 Assert.Fail("Expected exception not thrown");
             }
             catch (ShapeException e)
@@ -42,7 +46,7 @@ namespace ShapesTests
 
             try
             {
-                new Point(1, double.NaN);
+                sf.MakePoint(1, double.NaN);
                 Assert.Fail("Expected exception not thrown");
             }
             catch (ShapeException e)
@@ -52,7 +56,7 @@ namespace ShapesTests
 
             try
             {
-                new Point(double.PositiveInfinity, 1);
+                sf.MakePoint(double.PositiveInfinity, 1);
                 Assert.Fail("Expected exception not thrown");
             }
             catch (ShapeException e)
@@ -62,7 +66,7 @@ namespace ShapesTests
 
             try
             {
-                new Point(double.NegativeInfinity, 1);
+                sf.MakePoint(double.NegativeInfinity, 1);
                 Assert.Fail("Expected exception not thrown");
             }
             catch (ShapeException e)
@@ -72,7 +76,7 @@ namespace ShapesTests
 
             try
             {
-                new Point(double.NaN, 1);
+                sf.MakePoint(double.NaN, 1);
                 Assert.Fail("Expected exception not thrown");
             }
             catch (ShapeException e)
@@ -83,7 +87,8 @@ namespace ShapesTests
 
         [TestMethod]
         public void TestMoveX() {
-            Point p1 = new Point(1, 2);
+            ShapeFactory sf = new ShapeFactory();
+            Shapes.Point p1 = sf.MakePoint(1, 2);
 
             p1.MoveX(10);
             Assert.AreEqual(11, p1.X, 0);
@@ -135,7 +140,8 @@ namespace ShapesTests
 
         [TestMethod]
         public void TestMoveY() {
-            Point p1 = new Point(1, 2);
+            ShapeFactory sf = new ShapeFactory();
+            Shapes.Point p1 = sf.MakePoint(1, 2);
 
             p1.MoveY(10);
             Assert.AreEqual(1, p1.X, 0);
@@ -186,7 +192,8 @@ namespace ShapesTests
 
         [TestMethod]
         public void TestMove() {
-            Point p1 = new Point(1, 2);
+            ShapeFactory sf = new ShapeFactory();
+            Shapes.Point p1 = sf.MakePoint(1, 2);
 
             p1.Move(10, 20);
             Assert.AreEqual(11, p1.X, 0);
@@ -266,15 +273,29 @@ namespace ShapesTests
         }
 
         [TestMethod]
-        public void TestCopy() {
-            Point p1 = new Point(-123.45, -23.45);
+        public void TestCopy()
+        {
+            ShapeFactory sf = new ShapeFactory();
+            Shapes.Point p1 = sf.MakePoint(-123.45, -23.45);
             Assert.AreEqual(-123.45, p1.X, 0);
             Assert.AreEqual(-23.45, p1.Y, 0);
 
-            Point p2 = p1.Copy();
+            Shapes.Point p2 = p1.Copy();
             Assert.AreNotSame(p1, p2);
             Assert.AreEqual(p1.X, p2.X, 0);
             Assert.AreEqual(p1.Y, p2.Y, 0);
+        }
+
+        [TestMethod]
+        public void TestDraw()
+        {
+            ShapeFactory sf = new ShapeFactory();
+
+            Shapes.Point myPoint = sf.MakePoint(1, 2);
+            Bitmap bitmap = new Bitmap(1024, 1024, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
+            Graphics g = Graphics.FromImage(bitmap);
+            myPoint.Draw(g);
+            bitmap.Save("point.bmp");
         }
     }
 }

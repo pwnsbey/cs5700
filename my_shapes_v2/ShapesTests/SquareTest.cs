@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shapes;
 
@@ -10,12 +11,9 @@ namespace ShapesTests
         [TestMethod]
         public void TestValidConstruction()
         {
-            var square = new Square(1, 2, 3);
-            Assert.AreEqual(1, square.GetPoint1().X);
-            Assert.AreEqual(2, square.GetPoint1().Y);
-            Assert.AreEqual(3, square.GetSide());
+            ShapeFactory sf = new ShapeFactory();
 
-            square = new Square(new Point(1, 2), 3);
+            Square square = sf.MakeSquare(1, 2, 3);
             Assert.AreEqual(1, square.GetPoint1().X);
             Assert.AreEqual(2, square.GetPoint1().Y);
             Assert.AreEqual(3, square.GetSide());
@@ -24,51 +22,45 @@ namespace ShapesTests
         [TestMethod]
         public void TestInvalidConstruction()
         {
+            ShapeFactory sf = new ShapeFactory();
+
             try
             {
-                new Square(null, 3);
+                sf.MakeSquare(double.NegativeInfinity, 2, 3);
                 Assert.Fail("Exception exception not thrown");
             }
             catch (ShapeException e)
             {
-                Assert.AreEqual("Invalid corner point", e.Message);
+                Assert.AreEqual("Invalid x-location point", e.Message);
             }
 
             try
             {
-                new Square(new Point(1, 2), double.PositiveInfinity);
+                sf.MakeSquare(1, double.NegativeInfinity, 3);
                 Assert.Fail("Exception exception not thrown");
             }
             catch (ShapeException e)
             {
-                Assert.AreEqual("Invalid side legnth", e.Message);
+                Assert.AreEqual("Invalid y-location point", e.Message);
             }
 
             try
             {
-                new Square(new Point(1, 2), double.NegativeInfinity);
+                sf.MakeSquare(1, 2, double.PositiveInfinity);
                 Assert.Fail("Exception exception not thrown");
             }
             catch (ShapeException e)
             {
-                Assert.AreEqual("Invalid side legnth", e.Message);
-            }
-
-            try
-            {
-                new Square(new Point(1, 2), double.NaN);
-                Assert.Fail("Exception exception not thrown");
-            }
-            catch (ShapeException e)
-            {
-                Assert.AreEqual("Invalid side legnth", e.Message);
+                Assert.AreEqual("Invalid side length", e.Message);
             }
         }
 
         [TestMethod]
         public void TestMove()
         {
-            Square square = new Square(1, 1, 3);
+            ShapeFactory sf = new ShapeFactory();
+
+            Square square = sf.MakeSquare(1, 1, 3);
             square.Move(2, 3);
             Assert.AreEqual(3, square.GetPoint1().X);
             Assert.AreEqual(4, square.GetPoint1().Y);
@@ -77,8 +69,22 @@ namespace ShapesTests
         [TestMethod]
         public void TestComputeArea()
         {
-            Square square = new Square(2, 2, 2);
+            ShapeFactory sf = new ShapeFactory();
+
+            Square square = sf.MakeSquare(2, 2, 2);
             Assert.AreEqual(4, square.ComputeArea(), 0);
+        }
+
+        [TestMethod]
+        public void TestDraw()
+        {
+            ShapeFactory sf = new ShapeFactory();
+
+            Square mySquare = sf.MakeSquare(1, 2, 3);
+            Bitmap bitmap = new Bitmap(1024, 1024, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
+            Graphics g = Graphics.FromImage(bitmap);
+            mySquare.Draw(g);
+            bitmap.Save("square.bmp");
         }
     }
 }

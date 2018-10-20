@@ -92,7 +92,7 @@ namespace Shapes
                     return MakeSquare(int.Parse(valDict["cornerx"]), int.Parse(valDict["cornery"]), 
                                       int.Parse(valDict["sidelength"]));
                 case "triangle":
-                    return MakeTrangle(int.Parse(valDict["x1"]), int.Parse(valDict["y1"]),
+                    return MakeTriangle(int.Parse(valDict["x1"]), int.Parse(valDict["y1"]),
                                        int.Parse(valDict["x2"]), int.Parse(valDict["y2"]),
                                        int.Parse(valDict["x3"]), int.Parse(valDict["y3"]));
                 case "embeddedpicture":
@@ -134,7 +134,7 @@ namespace Shapes
             return new Square(MakePoint(x, y), sideLength);
         }
 
-        public Triangle MakeTrangle(double x1, double y1, double x2, double y2, double x3, double y3)
+        public Triangle MakeTriangle(double x1, double y1, double x2, double y2, double x3, double y3)
         {
             return new Triangle(MakePoint(x1, y1), MakePoint(x2, y2), MakePoint(x3, y3));
         }

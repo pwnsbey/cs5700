@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shapes;
 
@@ -10,15 +11,9 @@ namespace ShapesTests
         [TestMethod]
         public void TestValidConstruction()
         {
-            var triangle = new Triangle(1, 1, 2, 2, 3, 3);
-            Assert.AreEqual(1, triangle.Point1.X);
-            Assert.AreEqual(1, triangle.Point1.Y);
-            Assert.AreEqual(2, triangle.Point2.X);
-            Assert.AreEqual(2, triangle.Point2.Y);
-            Assert.AreEqual(3, triangle.Point3.X);
-            Assert.AreEqual(3, triangle.Point3.Y);
+            ShapeFactory sf = new ShapeFactory();
 
-            triangle = new Triangle(new Point(1, 1), new Point(2, 2), new Point(3, 3));
+            var triangle = sf.MakeTriangle(1, 1, 2, 2, 3, 3);
             Assert.AreEqual(1, triangle.Point1.X);
             Assert.AreEqual(1, triangle.Point1.Y);
             Assert.AreEqual(2, triangle.Point2.X);
@@ -30,61 +25,35 @@ namespace ShapesTests
         [TestMethod]
         public void TestInvalidConstruction()
         {
+            ShapeFactory sf = new ShapeFactory();
+
             try
             {
-                new Triangle(null, new Point(2, 2), new Point(3, 3));
+                sf.MakeTriangle(double.PositiveInfinity, 1, 2, 2, 3, 3);
                 Assert.Fail("Exception expetion not thrown");
             }
             catch (ShapeException e)
             {
-                Assert.AreEqual("Invalid corner point(s)", e.Message);
+                Assert.AreEqual("Invalid x-location point", e.Message);
             }
 
             try
             {
-                new Triangle(new Point(1, 1), null, new Point(3, 3));
+                sf.MakeTriangle(1, double.NegativeInfinity, 2, 2, 3, 3);
                 Assert.Fail("Exception expetion not thrown");
             }
             catch (ShapeException e)
             {
-                Assert.AreEqual("Invalid corner point(s)", e.Message);
-            }
-
-            try
-            {
-                new Triangle(new Point(1, 1), new Point(2, 2), null);
-                Assert.Fail("Exception expetion not thrown");
-            }
-            catch (ShapeException e)
-            {
-                Assert.AreEqual("Invalid corner point(s)", e.Message);
-            }
-
-            try
-            {
-                new Triangle(new Point(1, 1), new Point(1, 1), new Point(3, 3));
-                Assert.Fail("Exception expetion not thrown");
-            }
-            catch (ShapeException e)
-            {
-                Assert.AreEqual("Cannot have zero-length sides", e.Message);
-            }
-
-            try
-            {
-                new Triangle(new Point(1, 1), new Point(1, 2), new Point(1, 3));
-                Assert.Fail("Exception expetion not thrown");
-            }
-            catch (ShapeException e)
-            {
-                Assert.AreEqual("All points may not be in a line", e.Message);
+                Assert.AreEqual("Invalid y-location point", e.Message);
             }
         }
 
         [TestMethod]
         public void TestMove()
         {
-            Triangle triangle = new Triangle(1, 1, 2, 2, 3, 3);
+            ShapeFactory sf = new ShapeFactory();
+
+            Triangle triangle = sf.MakeTriangle(1, 1, 2, 2, 3, 3);
             triangle.Move(2, 4);
             Assert.AreEqual(3, triangle.Point1.X);
             Assert.AreEqual(5, triangle.Point1.Y);
@@ -97,8 +66,22 @@ namespace ShapesTests
         [TestMethod]
         public void TestComputeArea()
         {
-            Triangle triangle = new Triangle(0, 0, 0, 2, 2, 0);
+            ShapeFactory sf = new ShapeFactory();
+
+            Triangle triangle = sf.MakeTriangle(0, 0, 0, 2, 2, 0);
             Assert.AreEqual(2, triangle.ComputeArea(), .0001);
+        }
+
+        [TestMethod]
+        public void TestDraw()
+        {
+            ShapeFactory sf = new ShapeFactory();
+
+            Triangle myTriange = sf.MakeTriangle(1, 1, 2, 2, 3, 3);
+            Bitmap bitmap = new Bitmap(1024, 1024, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
+            Graphics g = Graphics.FromImage(bitmap);
+            myTriange.Draw(g);
+            bitmap.Save("triangle.bmp");
         }
     }
 }

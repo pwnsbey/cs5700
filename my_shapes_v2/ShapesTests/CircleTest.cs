@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shapes;
 
@@ -10,63 +11,22 @@ namespace ShapesTests
         [TestMethod]
         public void TestValidConstruction()
         {
-            var circle = new Circle (1, 3, 2.5);
+            ShapeFactory sf = new ShapeFactory();
+            
+            Circle circle = sf.MakeCircle(1, 3, 2.5);
             Assert.AreEqual(1, circle.GetCenter().X);
             Assert.AreEqual(3, circle.GetCenter().Y);
             Assert.AreEqual(2.5, circle.GetRadius());
-
-            circle = new Circle(new Point(1.23, 4.56), 7.89);
-            Assert.AreEqual(1.23, circle.GetCenter().X);
-            Assert.AreEqual(4.56, circle.GetCenter().Y);
-            Assert.AreEqual(7.89, circle.GetRadius());
         }
 
         [TestMethod]
         public void TestInvalidConstruction()
         {
-            try
-            {
-                new Circle(null, 2.5);
-                Assert.Fail("Expected exception not thrown");
-            }
-            catch (ShapeException e)
-            {
-                Assert.AreEqual("Invalid center point", e.Message);
-            }
+            ShapeFactory sf = new ShapeFactory();
 
             try
             {
-                new Circle(new Point(1, 2), double.PositiveInfinity);
-                Assert.Fail("Expected exception not thrown");
-            }
-            catch (ShapeException e)
-            {
-                Assert.AreEqual("Invalid radius", e.Message);
-            }
-
-            try
-            {
-                new Circle(new Point(1, 2), double.NegativeInfinity);
-                Assert.Fail("Expected exception not thrown");
-            }
-            catch (ShapeException e)
-            {
-                Assert.AreEqual("Invalid radius", e.Message);
-            }
-
-            try
-            {
-                new Circle(new Point(1, 2), Double.NaN);
-                Assert.Fail("Expected exception not thrown");
-            }
-            catch (ShapeException e)
-            {
-                Assert.AreEqual("Invalid radius", e.Message);
-            }
-
-            try
-            {
-                new Circle(double.PositiveInfinity, 2, 3);
+                sf.MakeCircle(double.PositiveInfinity, 2, 3);
                 Assert.Fail("Expected exception not thrown");
             }
             catch (ShapeException e)
@@ -76,7 +36,7 @@ namespace ShapesTests
 
             try
             {
-                new Circle(double.NegativeInfinity, 2, 3);
+                sf.MakeCircle(double.NegativeInfinity, 2, 3);
                 Assert.Fail("Expected exception not thrown");
             }
             catch (ShapeException e)
@@ -86,7 +46,7 @@ namespace ShapesTests
 
             try
             {
-                new Circle(Double.NaN, 2, 3);
+                sf.MakeCircle(Double.NaN, 2, 3);
                 Assert.Fail("Expected exception not thrown");
             }
             catch (ShapeException e)
@@ -96,7 +56,7 @@ namespace ShapesTests
 
             try
             {
-                new Circle(1, double.PositiveInfinity, 3);
+                sf.MakeCircle(1, double.PositiveInfinity, 3);
                 Assert.Fail("Expected exception not thrown");
             }
             catch (ShapeException e)
@@ -106,7 +66,7 @@ namespace ShapesTests
 
             try
             {
-                new Circle(1, double.NegativeInfinity, 3);
+                sf.MakeCircle(1, double.NegativeInfinity, 3);
                 Assert.Fail("Expected exception not thrown");
             }
             catch (ShapeException e)
@@ -116,7 +76,7 @@ namespace ShapesTests
 
             try
             {
-                new Circle(1, double.NaN, 3);
+                sf.MakeCircle(1, double.NaN, 3);
                 Assert.Fail("Expected exception not thrown");
             }
             catch (ShapeException e)
@@ -126,7 +86,7 @@ namespace ShapesTests
 
             try
             {
-                new Circle(1, 2, double.PositiveInfinity);
+                sf.MakeCircle(1, 2, double.PositiveInfinity);
                 Assert.Fail("Expected exception not thrown");
             }
             catch (ShapeException e)
@@ -136,7 +96,7 @@ namespace ShapesTests
 
             try
             {
-                new Circle(1, 2, double.PositiveInfinity);
+                sf.MakeCircle(1, 2, double.PositiveInfinity);
                 Assert.Fail("Expected exception not thrown");
             }
             catch (ShapeException e)
@@ -146,7 +106,7 @@ namespace ShapesTests
 
             try
             {
-                new Circle(1, 2, Double.NaN);
+                sf.MakeCircle(1, 2, Double.NaN);
                 Assert.Fail("Expected exception not thrown");
             }
             catch (ShapeException e)
@@ -157,7 +117,9 @@ namespace ShapesTests
 
         [TestMethod]
         public void TestMove() {
-            Circle myCircle = new Circle(1, 2, 5);
+            ShapeFactory sf = new ShapeFactory();
+
+            Circle myCircle = sf.MakeCircle(1, 2, 5);
             Assert.AreEqual(1, myCircle.GetCenter().X, 0);
             Assert.AreEqual(2, myCircle.GetCenter().Y, 0);
             Assert.AreEqual(5, myCircle.GetRadius(), 0);
@@ -245,7 +207,9 @@ namespace ShapesTests
 
         [TestMethod]
         public void TestScale() {
-            Circle myCircle = new Circle(1, 2, 5);
+            ShapeFactory sf = new ShapeFactory();
+
+            Circle myCircle = sf.MakeCircle(1, 2, 5);
             Assert.AreEqual(1, myCircle.GetCenter().X, 0);
             Assert.AreEqual(2, myCircle.GetCenter().Y, 0);
             Assert.AreEqual(5, myCircle.GetRadius(), 0);
@@ -294,7 +258,9 @@ namespace ShapesTests
         [TestMethod]
         public void TestComputeArea()
         {
-            Circle myCircle = new Circle(1, 2, 5);
+            ShapeFactory sf = new ShapeFactory();
+
+            Circle myCircle = sf.MakeCircle(1, 2, 5);
             Assert.AreEqual(78.53975, myCircle.ComputeArea(), 0.0001);
 
             myCircle = new Circle(1, 2, 4.234);
@@ -308,7 +274,13 @@ namespace ShapesTests
         [TestMethod]
         public void TestDraw()
         {
+            ShapeFactory sf = new ShapeFactory();
 
+            Circle myCircle = sf.MakeCircle(5, 5, 2);
+            Bitmap bitmap = new Bitmap(1024, 1024, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
+            Graphics g = Graphics.FromImage(bitmap);
+            myCircle.Draw(g);
+            bitmap.Save("circle.bmp");
         }
     }
 }

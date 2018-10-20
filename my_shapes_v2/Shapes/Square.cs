@@ -28,7 +28,7 @@ namespace Shapes
          */
         public Square (Point point, double sideLength)
         {
-            Validator.ValidatePositiveDouble(sideLength, "Invalid side legnth");
+            Validator.ValidatePositiveDouble(sideLength, "Invalid side length");
             if (point == null)
                 throw new ShapeException("Invalid corner point");
 

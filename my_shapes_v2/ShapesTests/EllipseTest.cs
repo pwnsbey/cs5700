@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shapes;
 
@@ -10,65 +11,23 @@ namespace ShapesTests
         [TestMethod]
         public void TestValidConstruction()
         {
-            var ellipse = new Ellipse(1, 3, 2.5, 3.5);
+            ShapeFactory sf = new ShapeFactory();
+
+            Ellipse ellipse = sf.MakeEllipse(1, 3, 2.5, 3.5);
             Assert.AreEqual(1, ellipse.Center.X);
             Assert.AreEqual(3, ellipse.Center.Y);
             Assert.AreEqual(2.5, ellipse.VertRadius);
             Assert.AreEqual(3.5, ellipse.HorizRadius);
-
-            ellipse = new Ellipse(new Point(1.23, 4.56), 7.89, 8.65);
-            Assert.AreEqual(1.23, ellipse.Center.X);
-            Assert.AreEqual(4.56, ellipse.Center.Y);
-            Assert.AreEqual(7.89, ellipse.VertRadius);
-            Assert.AreEqual(8.65, ellipse.HorizRadius);
         }
 
         [TestMethod]
         public void TestInvalidConstruction()
         {
-            try
-            {
-                new Ellipse(null, 2.5, 3.5);
-                Assert.Fail("Expected exception not thrown");
-            }
-            catch (ShapeException e)
-            {
-                Assert.AreEqual("Invalid center point", e.Message);
-            }
+            ShapeFactory sf = new ShapeFactory();
 
             try
             {
-                new Ellipse(new Point(1, 2), double.PositiveInfinity, double.PositiveInfinity);
-                Assert.Fail("Expected exception not thrown");
-            }
-            catch (ShapeException e)
-            {
-                Assert.AreEqual("Invalid radius", e.Message);
-            }
-
-            try
-            {
-                new Ellipse(new Point(1, 2), double.NegativeInfinity, double.NegativeInfinity);
-                Assert.Fail("Expected exception not thrown");
-            }
-            catch (ShapeException e)
-            {
-                Assert.AreEqual("Invalid radius", e.Message);
-            }
-
-            try
-            {
-                new Ellipse(new Point(1, 2), Double.NaN, Double.NaN);
-                Assert.Fail("Expected exception not thrown");
-            }
-            catch (ShapeException e)
-            {
-                Assert.AreEqual("Invalid radius", e.Message);
-            }
-
-            try
-            {
-                new Ellipse(double.PositiveInfinity, 2, 3, 4);
+                sf.MakeEllipse(double.PositiveInfinity, 2, 3, 4);
                 Assert.Fail("Expected exception not thrown");
             }
             catch (ShapeException e)
@@ -78,7 +37,7 @@ namespace ShapesTests
 
             try
             {
-                new Ellipse(double.NegativeInfinity, 2, 3, 4);
+                sf.MakeEllipse(double.NegativeInfinity, 2, 3, 4);
                 Assert.Fail("Expected exception not thrown");
             }
             catch (ShapeException e)
@@ -88,7 +47,7 @@ namespace ShapesTests
 
             try
             {
-                new Ellipse(Double.NaN, 2, 3, 4);
+                sf.MakeEllipse(Double.NaN, 2, 3, 4);
                 Assert.Fail("Expected exception not thrown");
             }
             catch (ShapeException e)
@@ -98,7 +57,7 @@ namespace ShapesTests
 
             try
             {
-                new Ellipse(1, double.PositiveInfinity, 3, 4);
+                sf.MakeEllipse(1, double.PositiveInfinity, 3, 4);
                 Assert.Fail("Expected exception not thrown");
             }
             catch (ShapeException e)
@@ -108,7 +67,7 @@ namespace ShapesTests
 
             try
             {
-                new Ellipse(1, double.NegativeInfinity, 3, 4);
+                sf.MakeEllipse(1, double.NegativeInfinity, 3, 4);
                 Assert.Fail("Expected exception not thrown");
             }
             catch (ShapeException e)
@@ -118,7 +77,7 @@ namespace ShapesTests
 
             try
             {
-                new Ellipse(1, double.NaN, 3, 4);
+                sf.MakeEllipse(1, double.NaN, 3, 4);
                 Assert.Fail("Expected exception not thrown");
             }
             catch (ShapeException e)
@@ -128,7 +87,7 @@ namespace ShapesTests
 
             try
             {
-                new Ellipse(1, 2, double.PositiveInfinity, 4);
+                sf.MakeEllipse(1, 2, double.PositiveInfinity, 4);
                 Assert.Fail("Expected exception not thrown");
             }
             catch (ShapeException e)
@@ -138,7 +97,7 @@ namespace ShapesTests
 
             try
             {
-                new Ellipse(1, 2, double.PositiveInfinity, 4);
+                sf.MakeEllipse(1, 2, double.PositiveInfinity, 4);
                 Assert.Fail("Expected exception not thrown");
             }
             catch (ShapeException e)
@@ -148,7 +107,7 @@ namespace ShapesTests
 
             try
             {
-                new Ellipse(1, 2, Double.NaN, 4);
+                sf.MakeEllipse(1, 2, Double.NaN, 4);
                 Assert.Fail("Expected exception not thrown");
             }
             catch (ShapeException e)
@@ -158,7 +117,7 @@ namespace ShapesTests
 
             try
             {
-                new Ellipse(1, 2, 3, double.PositiveInfinity);
+                sf.MakeEllipse(1, 2, 3, double.PositiveInfinity);
                 Assert.Fail("Expected exception not thrown");
             }
             catch (ShapeException e)
@@ -168,7 +127,7 @@ namespace ShapesTests
 
             try
             {
-                new Ellipse(1, 2, 3, double.PositiveInfinity);
+                sf.MakeEllipse(1, 2, 3, double.PositiveInfinity);
                 Assert.Fail("Expected exception not thrown");
             }
             catch (ShapeException e)
@@ -178,7 +137,7 @@ namespace ShapesTests
 
             try
             {
-                new Ellipse(1, 2, 3, Double.NaN);
+                sf.MakeEllipse(1, 2, 3, Double.NaN);
                 Assert.Fail("Expected exception not thrown");
             }
             catch (ShapeException e)
@@ -190,7 +149,9 @@ namespace ShapesTests
         [TestMethod]
         public void TestMove()
         {
-            Ellipse myEllipse = new Ellipse(1, 2, 5, 6);
+            ShapeFactory sf = new ShapeFactory();
+
+            Ellipse myEllipse = sf.MakeEllipse(1, 2, 5, 6);
             Assert.AreEqual(1, myEllipse.Center.X, 0);
             Assert.AreEqual(2, myEllipse.Center.Y, 0);
             Assert.AreEqual(5, myEllipse.VertRadius, 0);
@@ -284,7 +245,9 @@ namespace ShapesTests
         [TestMethod]
         public void TestScale()
         {
-            Ellipse myEllipse = new Ellipse(1, 2, 5, 6);
+            ShapeFactory sf = new ShapeFactory();
+
+            Ellipse myEllipse = sf.MakeEllipse(1, 2, 5, 6);
             Assert.AreEqual(1, myEllipse.Center.X, 0);
             Assert.AreEqual(2, myEllipse.Center.Y, 0);
             Assert.AreEqual(5, myEllipse.VertRadius, 0);
@@ -336,7 +299,9 @@ namespace ShapesTests
         [TestMethod]
         public void TestComputeArea()
         {
-            Ellipse myEllipse = new Ellipse(1, 2, 5, 5);
+            ShapeFactory sf = new ShapeFactory();
+
+            Ellipse myEllipse = sf.MakeEllipse(1, 2, 5, 5);
             Assert.AreEqual(78.53975, myEllipse.ComputeArea(), 0.0001);
 
             myEllipse = new Ellipse(1, 2, 4.234, 4.234);
@@ -344,7 +309,18 @@ namespace ShapesTests
 
             myEllipse = new Ellipse(1, 2, 0, 0);
             Assert.AreEqual(0, myEllipse.ComputeArea(), 0);
+        }
 
+        [TestMethod]
+        public void TestDraw()
+        {
+            ShapeFactory sf = new ShapeFactory();
+
+            Ellipse myEllipse = sf.MakeEllipse(1, 3, 2.5, 3.5);
+            Bitmap bitmap = new Bitmap(1024, 1024, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
+            Graphics g = Graphics.FromImage(bitmap);
+            myEllipse.Draw(g);
+            bitmap.Save("ellipse.bmp");
         }
     }
 }

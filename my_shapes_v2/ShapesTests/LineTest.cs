@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shapes;
 
@@ -10,26 +11,9 @@ namespace ShapesTests
         [TestMethod]
         public void TestValidConstruction()
         {
-            var p1 = new Point(1,2);
-            var p2 = new Point(4, 10);
+            ShapeFactory sf = new ShapeFactory();
 
-
-            var myLine = new Line(p1, p2);
-           
-            Assert.AreSame(p1, myLine.Point1);
-            Assert.AreSame(p2, myLine.Point2);
-
-            myLine = new Line(p1, p1);
-            Assert.AreSame(p1, myLine.Point1);
-            Assert.AreSame(p1, myLine.Point2);
-
-            p1 = new Point(1.4,2.5);
-            p2 = new Point(4.6, 10.7);
-            myLine = new Line(p1, p2);
-            Assert.AreSame(p1, myLine.Point1);
-            Assert.AreSame(p2, myLine.Point2);
-
-            myLine = new Line(1, 3.33, 4.444, 5.5555);
+            Line myLine = sf.MakeLine(1, 3.33, 4.444, 5.5555);
             Assert.AreEqual(1, myLine.Point1.X, 0);
             Assert.AreEqual(3.33, myLine.Point1.Y, 0);
             Assert.AreEqual(4.444, myLine.Point2.X, 0);
@@ -39,32 +23,32 @@ namespace ShapesTests
         [TestMethod]
         public void TestInvalidConstruction()
         {
-            var p1 = new Point(1,2);
-            var p2 = new Point(4, 10);
+            ShapeFactory sf = new ShapeFactory();
 
             try {
-                new Line(p1, null);
+                sf.MakeLine(double.PositiveInfinity, 2, 4, 10);
                 Assert.Fail("Expected exception not thrown");
             }
             catch (ShapeException e)
             {
-                Assert.AreEqual("Invalid point", e.Message);
+                Assert.AreEqual("Invalid x-location point", e.Message);
             }
 
             try {
-                new Line(null, p2);
+                sf.MakeLine(1, 2, 4, double.NegativeInfinity);
                 Assert.Fail("Expected exception not thrown");
             }
             catch (ShapeException e)
             {
-                Assert.AreEqual("Invalid point", e.Message);
+                Assert.AreEqual("Invalid y-location point", e.Message);
             }
         }
 
         [TestMethod]
         public void TestMove()
         {
-            var myLine = new Line(1, 2, 4, 10);
+            ShapeFactory sf = new ShapeFactory();
+            Line myLine = sf.MakeLine(1, 2, 4, 10);
 
             myLine.Move(3, 4);
             Assert.AreEqual(4, myLine.Point1.X, 0);
@@ -88,36 +72,49 @@ namespace ShapesTests
         [TestMethod]
         public void TestComputeLength()
         {
-
-            var myLine = new Line(1, 2, 4, 10);
+            ShapeFactory sf = new ShapeFactory();
+            var myLine = sf.MakeLine(1, 2, 4, 10);
             Assert.AreEqual(8.544, myLine.ComputeLength(), 0.001);
 
-            myLine = new Line(1, 2, 1, 2);
+            myLine = sf.MakeLine(1, 2, 1, 2);
             Assert.AreEqual(Math.Sqrt(0), myLine.ComputeLength(), 0);
 
-            myLine = new Line(3, -2, -4, 10);
+            myLine = sf.MakeLine(3, -2, -4, 10);
             Assert.AreEqual(13.892, myLine.ComputeLength(), 0.001);
         }
 
         [TestMethod]
-        public void TestComputeSlope() { 
-            var myLine = new Line(2, 2, 4, 10);
+        public void TestComputeSlope() {
+            ShapeFactory sf = new ShapeFactory();
+            var myLine = sf.MakeLine(2, 2, 4, 10);
             Assert.AreEqual(4, myLine.ComputeSlope(), 0.1);
 
-            myLine = new Line(2, 2, 10, 4);
+            myLine = sf.MakeLine(2, 2, 10, 4);
             Assert.AreEqual(0.25, myLine.ComputeSlope(), 0.1);
 
-            myLine = new Line(2, 2, 4, 0);
+            myLine = sf.MakeLine(2, 2, 4, 0);
             Assert.AreEqual(-1, myLine.ComputeSlope(), 0.1);
 
-            myLine = new Line(2, 2, 2, 4);
+            myLine = sf.MakeLine(2, 2, 2, 4);
             Assert.AreEqual(double.PositiveInfinity, myLine.ComputeSlope(), 0.1);
 
-            myLine = new Line(2, 4, 2, 2);
+            myLine = sf.MakeLine(2, 4, 2, 2);
             Assert.AreEqual(double.NegativeInfinity, myLine.ComputeSlope(), 0.1);
 
-            myLine = new Line(2, 2, 2, 2);
+            myLine = sf.MakeLine(2, 2, 2, 2);
             Assert.IsTrue(double.IsNaN(myLine.ComputeSlope()));
+        }
+
+        [TestMethod]
+        public void TestDraw()
+        {
+            ShapeFactory sf = new ShapeFactory();
+
+            Line myLine = sf.MakeLine(1, 3.33, 4.444, 5.5555);
+            Bitmap bitmap = new Bitmap(1024, 1024, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
+            Graphics g = Graphics.FromImage(bitmap);
+            myLine.Draw(g);
+            bitmap.Save("line.bmp");
         }
     }
 }

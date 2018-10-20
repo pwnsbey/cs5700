@@ -12,11 +12,13 @@ namespace Shapes
 
         public CompositeShape(Point center)
         {
+            Shapes = new List<Shape>();
             Center = center;
         }
 
         public CompositeShape(double x, double y)
         {
+            Shapes = new List<Shape>();
             Center = new Point(x, y);
         }
 
@@ -61,6 +63,7 @@ namespace Shapes
         {
             foreach (Shape shape in Shapes)
                 shape.Move(deltaX, deltaY);
+            Center.Move(deltaX, deltaY);
         }
 
         public override string ToScript()
