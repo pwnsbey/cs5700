@@ -1,0 +1,2 @@
+C:\Users\pwnsbey\Desktop\Schoolwork\cs5700\my_soduku\my_sudoku\obj\Debug\sudoku.csprojAssemblyReference.cache
+C:\Users\pwnsbey\Desktop\Schoolwork\cs5700\my_soduku\my_sudoku\obj\Debug\sudoku.csproj.CoreCompileInputs.cache
