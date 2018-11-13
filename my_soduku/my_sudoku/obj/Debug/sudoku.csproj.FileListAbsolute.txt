@@ -1,2 +1,7 @@
 C:\Users\pwnsbey\Desktop\Schoolwork\cs5700\my_soduku\my_sudoku\obj\Debug\sudoku.csprojAssemblyReference.cache
 C:\Users\pwnsbey\Desktop\Schoolwork\cs5700\my_soduku\my_sudoku\obj\Debug\sudoku.csproj.CoreCompileInputs.cache
+C:\Users\pwnsbey\Desktop\Schoolwork\cs5700\my_soduku\my_sudoku\bin\Debug\my_sudoku.exe.config
+C:\Users\pwnsbey\Desktop\Schoolwork\cs5700\my_soduku\my_sudoku\bin\Debug\my_sudoku.exe
+C:\Users\pwnsbey\Desktop\Schoolwork\cs5700\my_soduku\my_sudoku\bin\Debug\my_sudoku.pdb
+C:\Users\pwnsbey\Desktop\Schoolwork\cs5700\my_soduku\my_sudoku\obj\Debug\my_sudoku.exe
+C:\Users\pwnsbey\Desktop\Schoolwork\cs5700\my_soduku\my_sudoku\obj\Debug\my_sudoku.pdb
