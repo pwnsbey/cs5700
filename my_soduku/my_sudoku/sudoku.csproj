@@ -47,6 +47,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Puzzle.cs" />
+    <Compile Include="RemainderStrat.cs" />
+    <Compile Include="Solver.cs" />
+    <Compile Include="SolverStrat.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
