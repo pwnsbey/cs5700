@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DadStrat.cs" />
     <Compile Include="FileIO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -50,6 +51,7 @@
     <Compile Include="RemainderStrat.cs" />
     <Compile Include="Solver.cs" />
     <Compile Include="SolverStrat.cs" />
+    <Compile Include="VexStrat.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
