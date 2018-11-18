@@ -13,11 +13,14 @@ namespace sudoku
         {
             Console.WriteLine("Beginning...");
             FileIO fileIO = new FileIO();
-            Puzzle puzzle = fileIO.ReadPuzzle("SamplePuzzles/Input/Puzzle-4x4-0903.txt");
+            Puzzle puzzle = fileIO.ReadPuzzle("SamplePuzzles/Input/Puzzle-4x4-0001.txt");
             Console.WriteLine("-------------------------------------");
             Console.WriteLine("BEGIN");
             Solver solver = new Solver();
             solver.Solve(puzzle);
+            Console.WriteLine("-------------------------------------");
+            Console.WriteLine("FINISH");
+            puzzle.PrintPuzzle();
             while (true)
             {
                 if (Console.KeyAvailable)

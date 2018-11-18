@@ -22,10 +22,20 @@ namespace my_sudoku
                     blankCoords.Add(blankCoord);
                 }
             }
+            Puzzle newPuzzle = new Puzzle(puzzle);
             for (int i = 0; i < blankCoords.Count; i++)
             {
-                
+                List<char> coordPossibilities = GetPossibilities(puzzle, blankCoords[i][0], blankCoords[i][1]);
+                for (int j = 0; j < coordPossibilities.Count; j++)
+                {
+                    newPuzzle.Plane[blankCoords[i][0], blankCoords[i][1]] = coordPossibilities[j];
+                    if (CheckIfSolved(puzzle))
+                        return newPuzzle;
+                    if (coordPossibilities.Count == 1)
+                        return newPuzzle;
+                }
             }
+            return Solve(newPuzzle);
         }
     }
 }

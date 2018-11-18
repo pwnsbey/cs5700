@@ -15,8 +15,6 @@ namespace my_sudoku
 
             while (canSolve)
             {
-                puzzle.PrintPuzzle();
-                Console.WriteLine("");
                 canSolve = false;
                 for (int j = 0; j < puzzle.Size; j++)
                 {
@@ -25,7 +23,7 @@ namespace my_sudoku
                         if (puzzle.Plane[i, j] == '-')
                         {
                             // Cols
-                            char[] colNeighbors = puzzle.GetInCol(i, j);
+                            char[] colNeighbors = GetInCol(puzzle, i, j);
                             int occurrences = 0;
                             List<char> numberOpts = new List<char>();
                             for (int k = 1; k <= puzzle.Size; k++)
@@ -45,7 +43,7 @@ namespace my_sudoku
                             // Rows
                             if (!canSolve)
                             {
-                                char[] rowNeighbors = puzzle.GetInRow(i, j);
+                                char[] rowNeighbors = GetInRow(puzzle, i, j);
                                 occurrences = 0;
                                 numberOpts = new List<char>();
                                 for (int k = 1; k <= puzzle.Size; k++)
@@ -66,7 +64,7 @@ namespace my_sudoku
                             // Blocks
                             if (!canSolve)
                             {
-                                char[] blockNeighbors = puzzle.GetInBlock(i, j);
+                                char[] blockNeighbors = GetInBlock(puzzle, i, j);
                                 occurrences = 0;
                                 numberOpts = new List<char>();
                                 for (int k = 1; k <= puzzle.Size; k++)
@@ -87,8 +85,6 @@ namespace my_sudoku
                     }
                 }
             }
-            Console.WriteLine("FINISH");
-            puzzle.PrintPuzzle();
             return puzzle;
         }
     }

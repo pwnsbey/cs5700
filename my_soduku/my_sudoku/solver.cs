@@ -16,7 +16,7 @@ namespace my_sudoku
 
         public Puzzle Solve(Puzzle puzzle)
         {
-            SolverStrat strat = new RemainderStrat();
+            SolverStrat strat = new VexStrat();
             return strat.Solve(puzzle);
         }
     }
