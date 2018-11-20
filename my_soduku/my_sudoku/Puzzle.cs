@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace sudoku
 {
-    class Puzzle
+    public class Puzzle
     {
         public int Size;
         public int Blocksize;

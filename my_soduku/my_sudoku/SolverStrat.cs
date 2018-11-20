@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace my_sudoku
 {
-    abstract class SolverStrat
+    public abstract class SolverStrat
     {
         public bool CheckIfSolved(Puzzle puzzle)
         {

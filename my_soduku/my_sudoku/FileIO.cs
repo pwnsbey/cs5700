@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace my_sudoku
 {
-    class FileIO
+    public class FileIO
     {
         public Puzzle ReadPuzzle(string filename)
         {

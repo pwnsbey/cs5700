@@ -7,7 +7,7 @@ using sudoku;
 
 namespace my_sudoku
 {
-    class DadStrat : SolverStrat
+    public class DadStrat : SolverStrat
     {
         public override Puzzle Solve(Puzzle puzzle)
         {

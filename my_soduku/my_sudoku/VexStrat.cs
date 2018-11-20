@@ -7,7 +7,7 @@ using sudoku;
 
 namespace my_sudoku
 {
-    class VexStrat : SolverStrat
+    public class VexStrat : SolverStrat
     {
         public override Puzzle Solve(Puzzle puzzle)
         {
