@@ -62,8 +62,12 @@
     <Compile Include="Shape.cs" />
     <Compile Include="ShapeException.cs" />
     <Compile Include="ShapeFactory.cs" />
-    <Compile Include="Square.cs" />
-    <Compile Include="Triangle.cs" />
+    <Compile Include="Square\Cube.cs" />
+    <Compile Include="Square\Square.cs" />
+    <Compile Include="Square\SquareFactory.cs" />
+    <Compile Include="Triangle\Tetrahedron.cs" />
+    <Compile Include="Triangle\Triangle.cs" />
+    <Compile Include="Triangle\TriangleFactory.cs" />
     <Compile Include="Validator.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -5,9 +5,9 @@ namespace Shapes
 {
     public class Triangle : Shape
     {
-        public Point Point1 { get; private set; }
-        public Point Point2 { get; private set; }
-        public Point Point3 { get; private set; }
+        public Point Point1 { get; protected set; }
+        public Point Point2 { get; protected set; }
+        public Point Point3 { get; protected set; }
 
         /**
          * Constructor with x-y location for all three points
@@ -51,6 +51,10 @@ namespace Shapes
             Point3 = point3;
         }
 
+        // exists to get the child class to stop whining about constructors
+        public Triangle()
+        { }
+
         /**
          * In-class utility for use by constructors to make sure user input creates a valid triangle
          * 
@@ -58,7 +62,7 @@ namespace Shapes
          * @param point2 The second point
          * @param point3 The third point
          */
-        private void ValidateTriangle(Point point1, Point point2, Point point3)
+        protected void ValidateTriangle(Point point1, Point point2, Point point3)
         {
             if (point1.EqualToPoint(point2) || point1.EqualToPoint(point3) || point2.EqualToPoint(point3))
                 throw new ShapeException("Cannot have zero-length sides");
@@ -80,35 +84,12 @@ namespace Shapes
 
             return Math.Sqrt(semiperimeter * (semiperimeter - sideALen) * (semiperimeter - sideBLen) * (semiperimeter - sideCLen));
         }
-        /**
-         * Move the circle
-         * @param deltaX            a delta change for the x-location of center of the triangle
-         * @param deltaY            a delta change for the y-location of center of the triangle
-         * @throws ShapeException   Exception thrown if either the delta x or y are not valid doubles
-         */
-        public override void Move(double deltaX, double deltaY)
-        {
-            Point1.Move(deltaX, deltaY);
-            Point2.Move(deltaX, deltaY);
-            Point3.Move(deltaX, deltaY);
-        }
 
-        public override string ToScript()
+        public override void Move(double deltaX, double deltaY, double deltaZ = 0)
         {
-            return "shape:triangle,x1:" + Point1.X.ToString() + ",y1:" + Point1.Y.ToString() +
-                   ",x2:" + Point2.X.ToString() + ",y2:" + Point2.Y.ToString() +
-                   ",x3:" + Point3.X.ToString() + ",y3:" + Point3.Y.ToString();
-        }
-
-        public override void Draw(Graphics graphics)
-        {
-            PointF[] lines =
-            {
-                new PointF((float)Point1.X, (float)Point1.Y),
-                new PointF((float)Point2.X, (float)Point2.Y),
-                new PointF((float)Point3.X, (float)Point3.Y)
-            };
-            graphics.DrawLines(pen, lines);
+            Point1.Move(deltaX, deltaY, deltaZ);
+            Point2.Move(deltaX, deltaY, deltaZ);
+            Point3.Move(deltaX, deltaY, deltaZ);
         }
     }
 }
