@@ -38,5 +38,13 @@ namespace Shapes
         // exists to get the child class to stop whining about constructors
         public Square()
         { }
+
+        public void SetSquare(double x, double y, double sideLen)
+        {
+            Point1.X = x;
+            Point1.Y = y;
+            Point2.X = x + sideLen;
+            Point2.Y = y + sideLen;
+        }
     }
 }

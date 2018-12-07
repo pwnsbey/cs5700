@@ -35,6 +35,18 @@ namespace Shapes
         protected Circle()
         { }
 
+        public void SetCenter(double x, double y)
+        {
+            Ellipse.Center.X = x;
+            Ellipse.Center.Y = y;
+        }
+
+        public void SetRadius(double radius)
+        {
+            Ellipse.HorizRadius = radius;
+            Ellipse.VertRadius = radius;
+        }
+
         /**
          * @return the center of the circle as a Point
          */

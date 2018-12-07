@@ -14,3 +14,5 @@ C:\Users\pwnsbey\Desktop\Schoolwork\cs5700\my_shapes_v3\Shapes\obj\Debug\Shapes.
 C:\Users\pwnsbey\Desktop\Schoolwork\cs5700\my_shapes_v3\Shapes\obj\Debug\Shapes.csproj.CoreCompileInputs.cache
 C:\Users\pwnsbey\Desktop\Schoolwork\cs5700\my_shapes_v3\Shapes\obj\Debug\Shapes.dll
 C:\Users\pwnsbey\Desktop\Schoolwork\cs5700\my_shapes_v3\Shapes\obj\Debug\Shapes.pdb
+C:\Users\pwnsbey\Desktop\Schoolwork\cs5700\my_shapes_v3\Shapes\bin\Debug\Shapes.dll
+C:\Users\pwnsbey\Desktop\Schoolwork\cs5700\my_shapes_v3\Shapes\bin\Debug\Shapes.pdb

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Shapes
 {
-    class TriangleFactory : ShapeFactory
+    public class TriangleFactory : ShapeFactory
     {
         public override Shape Create2dShape()
         {
